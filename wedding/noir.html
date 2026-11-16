@@ -353,7 +353,8 @@ const CONFIG = {
   rsvpByZh: '请于2月28日前回复',
   maxPax: 4,
   diet: [['Vegetarian', '素食'], ['No beef', '不吃牛肉'], ['No pork', '不吃猪肉'], ['No seafood', '不吃海鲜']],
-  contact: 'With love and gratitude. For any questions, simply WhatsApp us at [your number] · 如有疑问，欢迎联系我们',
+  contact: 'With love and gratitude. For any questions, simply WhatsApp us at',
+  whatsapp: '6590464045', whatsappShow: '9046 4045',
   cover: 'photos/01.jpg',               // phone cover
   coverWide: 'photos/04.jpg',           // laptop cover
   photos: ['photos/02.jpg', 'photos/03.jpg', 'photos/04.jpg', 'photos/05.jpg', 'photos/06.jpg']
@@ -380,7 +381,7 @@ $('#timeZh').textContent = CONFIG.timeZh;
 $('#rsvpByZh').textContent = CONFIG.rsvpByZh;
 $('#timeLine').textContent = CONFIG.time;
 $('#rsvpBy').textContent = CONFIG.rsvpBy;
-$('#foot').innerHTML = `<span class="zh">花开富贵 · 喜气盈门</span>${esc(CONFIG.contact)}`;
+$('#foot').innerHTML = `<span class="zh">花开富贵 · 喜气盈门</span>${esc(CONFIG.contact)} <a href="https://wa.me/${esc(CONFIG.whatsapp)}" target="_blank" rel="noopener" style="color:inherit">${esc(CONFIG.whatsappShow)}</a>.<br>如有疑问，欢迎联系我们`;
 $('#mapLink').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('HortPark Multi-Purpose Hall, 33 Hyderabad Road, Singapore 119578');
 document.title = `${CONFIG.bride} & ${CONFIG.groom} · 10 April 2027`;
 $('#heroImg').src = CONFIG.cover;

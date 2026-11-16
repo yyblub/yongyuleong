@@ -304,7 +304,8 @@ var CONFIG = {
   rsvpBy: '28 February 2027', rsvpByZh: '请于2月28日前回复',
   maxPax: 4,
   diet: [['Vegetarian','素食'],['No beef','不吃牛肉'],['No pork','不吃猪肉'],['No seafood','不吃海鲜']],
-  contact: 'With love and gratitude. For any questions, simply WhatsApp us at [your number].',
+  contact: 'With love and gratitude. For any questions, simply WhatsApp us at',
+  whatsapp: '6590464045', whatsappShow: '9046 4045',
   // Photos live in the "photos" folder next to this file:
   photos: ['photos/01.jpg','photos/02.jpg','photos/03.jpg','photos/04.jpg','photos/05.jpg','photos/06.jpg']
 };
@@ -319,7 +320,7 @@ $('#yl-names').innerHTML = esc(CONFIG.bride) + ' <em>&amp;</em> ' + esc(CONFIG.g
 $('#yl-names-zh').textContent = CONFIG.brideZh + ' · ' + CONFIG.groomZh;
 $('#yl-time').textContent = CONFIG.time;
 $('#yl-by').textContent = CONFIG.rsvpBy; $('#yl-by-zh').textContent = CONFIG.rsvpByZh;
-$('#yl-contact').textContent = CONFIG.contact;
+$('#yl-contact').innerHTML = esc(CONFIG.contact) + ' <a href="https://wa.me/' + esc(CONFIG.whatsapp) + '" target="_blank" rel="noopener" style="color:inherit">' + esc(CONFIG.whatsappShow) + '</a>.<br><span class="yl-zh">如有疑问，欢迎联系我们</span>';
 $('#yl-map').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('HortPark Multi-Purpose Hall, 33 Hyderabad Road, Singapore 119578');
 
 // Personal link: ?to=Auntie%20Mei&pax=2
