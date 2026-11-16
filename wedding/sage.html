@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're Invited · 10 April 2027</title>
+<meta name="description" content="Wedding dinner · Saturday, 10 April 2027 · HortPark. Kindly RSVP.">
+<meta property="og:title" content="You're invited to our wedding dinner">
+<meta property="og:description" content="Saturday, 10 April 2027 · HortPark · Kindly RSVP">
+<meta property="og:image" content="photos/01.jpg">
+<meta name="theme-color" content="#738667">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@300;400&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#FFFDF8;--ivory:#F7F4EC;--pale-sage:#C4CFB6;--sage:#A9B89A;--euc:#6F8467;--olive:#3F4A36;--ink:#3B4634;--muted:#5E6B55;--gold:#C9B27C;--sagebg:#738667;--sagebtn:#5F7256;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--zh:'Noto Serif SC','Songti SC','STSong',serif}
+.zh{font-family:var(--zh);font-style:normal}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid #8A733F;outline-offset:3px}
+.eyebrow{font-size:.75rem;letter-spacing:.26em;text-transform:uppercase;margin:0}
+
+/* Envelope */
+#envelope{position:fixed;inset:0;z-index:50;background:radial-gradient(120% 90% at 50% 45%,#8FA083 0%,#7E9072 55%,#6E8063 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:30px;transition:opacity .8s,visibility .8s}
+#envelope.opened{opacity:0;visibility:hidden}
+.env-wrap{position:relative;width:min(84vw,420px);aspect-ratio:400/276}
+.env-card{position:absolute;inset:0;background:#FAF6EC;box-shadow:0 2px 0 rgba(255,255,255,.5) inset,0 28px 50px rgba(0,0,0,.32),0 6px 14px rgba(0,0,0,.18)}
+.env-card>svg,.env-flap{position:absolute;left:0;top:0;width:100%}
+.env-card>svg{height:100%}
+.env-flap{height:62%;transform-origin:top;transition:transform .7s cubic-bezier(.4,.1,.3,1);filter:drop-shadow(0 3px 3px rgba(60,55,40,.18));overflow:visible}
+#envelope.opening .env-flap{transform:rotateX(180deg)}
+.env-flowers{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(40,45,30,.22))}
+.env-seal{position:absolute;left:50%;top:62%;transform:translate(-50%,-50%);width:84px;height:84px;border:0;background:none;padding:0;cursor:pointer;filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));transition:transform .3s}
+.env-seal:hover{transform:translate(-50%,-50%) scale(1.06)}
+.env-to{font-family:var(--serif);font-style:italic;font-size:1.35rem;margin:0;color:#FFFDF8;text-align:center;line-height:1.5}
+.env-hint{color:#FFFDF8;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45}}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-start;color:var(--white);overflow:hidden;background:#555}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,20,20,.28) 0%,rgba(20,20,20,0) 40%)}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:1040px;margin:0 auto;padding:14px}
+.glass{background:rgba(32,33,31,.42);-webkit-backdrop-filter:blur(6px) saturate(1.1);backdrop-filter:blur(6px) saturate(1.1);border:1px solid rgba(255,255,255,.22);padding:18px 20px 20px;text-shadow:0 1px 8px rgba(0,0,0,.25)}
+.glass .btn{text-shadow:none;min-height:42px;padding:0 20px}
+.glass .eyebrow{font-size:.68rem}
+.names{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,9.5vw,4.4rem);line-height:1;margin:.35rem 0 .45rem}
+.names em{font-weight:400;color:#F4E6BC}
+.facts{font-family:var(--serif);font-size:clamp(1.05rem,3.2vw,1.35rem);line-height:1.35;margin:0 0 14px}
+.facts a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,253,248,.45);text-underline-offset:4px}
+.glass .names-zh{font-size:clamp(1.25rem,4.4vw,1.8rem);margin:0 0 .2rem}
+.glass .bless{font-size:.85rem;margin:0 0 .6rem}
+/* Phones & portrait: full photo at natural size, glass panel overlaps only its lower edge */
+@media (max-aspect-ratio:1/1), (max-width:899px){
+  .hero{display:block;min-height:0;background:#3a3d37}
+  .hero::before{content:"";position:absolute;inset:-40px;background:var(--cover) center/cover no-repeat;filter:blur(26px) brightness(.62) saturate(1.1)}
+  .hero::after{display:none}
+  .hero picture{position:relative;display:block;z-index:1}
+  .hero img{position:relative;inset:auto;height:auto;aspect-ratio:auto;object-fit:initial;display:block;
+    -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
+  .hero-inner{position:relative;z-index:2;margin-top:-22%;padding:0 14px 22px}
+  .glass .names{white-space:nowrap;font-size:min(9.3vw,2.6rem)}
+  .glass .eyebrow{white-space:nowrap;font-size:min(2.75vw,.7rem);letter-spacing:.2em}
+}
+@media (min-aspect-ratio:1/1) and (min-width:900px){
+  .hero{align-items:center}
+  .hero img{width:122%;right:auto;object-position:center 30%}
+  .hero::after{background:linear-gradient(to right,rgba(20,20,20,.3) 0%,rgba(20,20,20,0) 40%)}
+  .hero-inner{margin:0 0 0 3vw;max-width:min(31vw,420px);padding:0}
+  .glass{padding:30px 30px 32px}
+}
+@media (min-aspect-ratio:1/1) and (min-width:900px) and (max-width:1149px){
+  .hero-inner{max-width:300px}
+  .glass{padding:22px 22px 24px}
+  .names{font-size:2.5rem}
+  .facts{font-size:1rem}
+}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border:1px solid var(--sagebtn);background:var(--sagebtn);color:var(--white);text-decoration:none;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;cursor:pointer}
+.btn.light{background:var(--white);color:var(--olive);border-color:var(--white)}
+.btn.ghost{background:transparent;color:var(--sagebtn)}
+.btn[disabled]{opacity:.55;cursor:wait}
+
+/* Photos */
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:56px 24px 8px;max-width:1240px;margin:0 auto;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip img{height:300px;width:auto;flex:0 0 auto;object-fit:cover;scroll-snap-align:center;display:block}
+
+/* RSVP */
+.rsvp{padding:64px 22px 80px}
+.box{max-width:520px;margin:0 auto;padding:68px clamp(30px,7vw,52px) 60px}
+.box h2{font-family:var(--serif);font-weight:500;font-size:2.4rem;line-height:1.1;color:var(--olive);margin:.3rem 0 1.4rem}
+.box h2 em{font-weight:400}
+.field{display:flex;flex-direction:column;gap:4px;margin-bottom:18px}
+label.lbl,.lbl{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.field input{border:0;border-bottom:1px solid var(--sage);background:transparent;padding:10px 2px;font-size:1.05rem;font-weight:400;min-height:46px;border-radius:0}
+.field input:focus{outline:none;border-bottom-color:var(--olive)}
+fieldset{border:0;padding:0;margin:0 0 20px}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.choice input,.chips input{position:absolute;opacity:0;pointer-events:none}
+.choice label{display:flex;align-items:center;justify-content:center;min-height:56px;border:1px solid var(--sage);cursor:pointer;font-family:var(--serif);font-size:1.25rem;text-align:center;padding:6px}
+.choice input:checked+label{background:var(--sagebtn);border-color:var(--sagebtn);color:var(--white)}
+.choice input:focus-visible+label,.chips input:focus-visible+label{outline:2px solid #8A733F;outline-offset:3px}
+.inline{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--sage)}
+.stepper button{width:46px;height:46px;border:0;background:var(--ivory);font-size:1.3rem;cursor:pointer;color:var(--olive)}
+.stepper output{min-width:46px;text-align:center;font-family:var(--serif);font-size:1.4rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chips label{padding:9px 15px;border:1px solid var(--sage);border-radius:999px;cursor:pointer;font-size:.92rem;min-height:44px;display:inline-flex;align-items:center}
+.chips input:checked+label{background:var(--pale-sage);border-color:var(--euc);color:var(--olive)}
+.hide{display:none!important}
+.hp{position:absolute;left:-9999px}
+.error{color:#9A3B2E;font-size:.9rem;margin:0 0 12px}
+.thanks{text-align:center}
+.thanks p{margin:0 0 22px}
+.thanks .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.thanks .btn{width:100%;padding:0 14px;white-space:nowrap;letter-spacing:.14em}
+/* Chinese */
+.names-zh{font-family:var(--zh);font-weight:600;font-size:clamp(1.6rem,5vw,2.3rem);letter-spacing:.3em;margin:-.2rem 0 .3rem;color:#FFFDF8}
+.bless{font-family:var(--zh);letter-spacing:.35em;font-size:1rem;color:#FBF3DC;margin:0 0 1rem}
+.formal{max-width:480px;margin:0 auto;padding:64px 28px;text-align:center;font-family:var(--zh);color:var(--olive);line-height:2.1;font-size:1.05rem}
+.formal-wrap{padding:64px 24px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:72px 56px;max-width:1080px;margin:0 auto;align-items:stretch}
+.formal-wrap .formal{margin:0 auto;width:100%;display:flex;flex-direction:column;justify-content:center}
+.formal.en{font-family:var(--serif);font-size:1.22rem;line-height:1.75;color:var(--ink)}
+.formal.en .small{font-family:var(--sans);font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.formal.en .couple{font-size:2.5rem;font-weight:500;line-height:1.1;color:var(--olive);margin:.5rem 0 .6rem}
+.formal.en .couple em{font-weight:400;color:#A88F55}
+.formal.en .when{margin-top:.8rem}
+.formal.en .closing{margin-top:18px;font-size:1.05rem;color:var(--muted)}
+.formal.en .req{max-width:300px;margin:0 auto;text-wrap:balance}
+.formal p{text-wrap:balance}
+.formal:not(.en){font-size:1.15rem}
+@media (max-width:480px){.formal{padding:60px 22px}}
+.formal.en .rule{width:46px;height:1px;background:var(--gold);margin:18px auto}
+.formal .big{font-size:1.5rem;font-weight:600;letter-spacing:.4em;margin:.3rem 0}
+.formal .sign{margin-top:1rem;letter-spacing:.2em}
+.formal p{margin:0}
+.lbl .zh{letter-spacing:.1em;margin-left:6px;font-size:.85rem;text-transform:none}
+.choice label{flex-direction:column;line-height:1.25}
+.choice label .zh{font-size:.95rem;margin-top:2px}
+footer .zh{display:block;font-size:1.05rem;letter-spacing:.35em;color:var(--olive);margin-bottom:8px}
+/* Gold floral frames */
+main{overflow-x:clip}
+.frame{position:relative;background:#FCF9F2;border:1px solid #C9B27C;isolation:isolate}
+.frame>.fr-paper{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.7}
+.frame>.fr-inner{position:absolute;inset:8px;border:1px solid rgba(201,178,124,.55);pointer-events:none}
+.frame>.fr-corner{position:absolute;width:46px;height:46px;overflow:visible;pointer-events:none}
+.fr-corner.tl{top:14px;left:14px}.fr-corner.tr{top:14px;right:14px;transform:scaleX(-1)}
+.fr-corner.bl{bottom:14px;left:14px;transform:scaleY(-1)}.fr-corner.br{bottom:14px;right:14px;transform:scale(-1,-1)}
+.frame>.fr-spray{position:absolute;width:130px;height:110px;overflow:visible;pointer-events:none;z-index:2}
+.fr-spray.tl{top:-26px;left:-22px}.fr-spray.tr{top:-26px;right:-22px;transform:scaleX(-1)}
+.fr-spray.bl{bottom:-26px;left:-22px;transform:scaleY(-1)}.fr-spray.br{bottom:-26px;right:-22px;transform:scale(-1,-1)}
+@media (max-width:480px){.frame>.fr-spray{width:104px;height:88px}.fr-spray.tl,.fr-spray.tr{top:-22px}.fr-spray.bl,.fr-spray.br{bottom:-22px}.fr-spray.tl,.fr-spray.bl{left:-14px}.fr-spray.tr,.fr-spray.br{right:-14px}}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="paperGrain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="7" result="n"/>
+        <feColorMatrix in="n" values="0 0 0 0 .42  0 0 0 0 .39  0 0 0 0 .32  0 0 0 .22 0"/>
+      </filter>
+      <filter id="paperFibre" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".012 .09" numOctaves="2" seed="2" result="f"/>
+        <feColorMatrix in="f" values="0 0 0 0 .5  0 0 0 0 .47  0 0 0 0 .4  0 0 0 .09 0"/>
+      </filter>
+      <symbol id="rose" overflow="visible">
+        <g fill="none" stroke="#B5995A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M-18,4 C-20,-10 -8,-20 6,-19 C16,-18 21,-8 19,3 C17,14 6,20 -5,19 C-14,18 -18,12 -18,4Z" fill="#FBF7EE"/>
+          <path d="M-13,3 C-14,-8 -4,-14 6,-13"/>
+          <path d="M14,-4 C15,7 6,14 -4,13"/>
+          <path d="M-8,-1 C-6,-9 4,-10 7,-4 C9,2 3,7 -2,6"/>
+          <path d="M-2,-3 C0,-6 4,-4 3,-1 C2,2 -1,2 -1,0"/>
+          <path d="M-18,4 C-12,9 -6,9 -2,6"/>
+          <path d="M19,3 C14,0 10,-2 7,-4"/>
+          <path d="M-5,19 C-6,14 -6,10 -4,7" opacity=".7"/>
+        </g>
+      </symbol>
+      <symbol id="floret" overflow="visible">
+        <g fill="#FBF7EE" stroke="#B5995A" stroke-width=".7">
+          <path d="M0,0 C-3,-2 -3,-6 0,-7 C3,-6 3,-2 0,0Z"/><path d="M0,0 C-3,-2 -3,-6 0,-7 C3,-6 3,-2 0,0Z" transform="rotate(90)"/>
+          <path d="M0,0 C-3,-2 -3,-6 0,-7 C3,-6 3,-2 0,0Z" transform="rotate(180)"/><path d="M0,0 C-3,-2 -3,-6 0,-7 C3,-6 3,-2 0,0Z" transform="rotate(270)"/>
+        </g>
+        <circle r=".9" fill="#B5995A"/>
+      </symbol>
+      <symbol id="hydrangea" overflow="visible">
+        <circle r="19" fill="#FBF7EE"/>
+        <use href="#floret" x="0" y="0"/><use href="#floret" x="-12" y="-4" transform="rotate(20 -12 -4)"/><use href="#floret" x="11" y="-6" transform="rotate(40 11 -6)"/>
+        <use href="#floret" x="-3" y="-15" transform="rotate(10 -3 -15)"/><use href="#floret" x="9" y="9" transform="rotate(30 9 9)"/><use href="#floret" x="-9" y="10"/>
+        <use href="#floret" x="16" y="5" transform="rotate(15 16 5)"/><use href="#floret" x="-17" y="6" transform="rotate(35 -17 6)"/><use href="#floret" x="4" y="17"/>
+        <use href="#floret" x="10" y="-17" transform="rotate(25 10 -17)"/><use href="#floret" x="-15" y="-13" transform="rotate(5 -15 -13)"/>
+      </symbol>
+      <symbol id="orchid" overflow="visible">
+        <g fill="#FBF7EE" stroke="#B5995A" stroke-width="1" stroke-linejoin="round">
+          <path d="M0,-3 C-5,-10 -4,-22 0,-24 C4,-22 5,-10 0,-3Z"/>
+          <path d="M-2,2 C-10,6 -15,14 -14,19 C-9,18 -4,10 -2,2Z"/>
+          <path d="M2,2 C10,6 15,14 14,19 C9,18 4,10 2,2Z"/>
+          <path d="M-2,-1 C-8,-9 -20,-10 -22,-2 C-21,6 -9,7 -2,2"/>
+          <path d="M2,-1 C8,-9 20,-10 22,-2 C21,6 9,7 2,2"/>
+          <path d="M-4,2 C-4,9 4,9 4,2 C3,0 -3,0 -4,2Z"/>
+        </g>
+        <circle cy="-1" r="1.6" fill="#B5995A"/>
+      </symbol>
+      <symbol id="leaf" overflow="visible">
+        <path d="M0,0 C10,-10 30,-10 44,0 C30,10 10,10 0,0Z" fill="#FBF7EE" stroke="#B5995A" stroke-width="1"/>
+        <path d="M2,0 L40,0 M12,0 L18,-5 M22,0 L28,-5 M14,0 L20,5 M24,0 L30,5" fill="none" stroke="#B5995A" stroke-width=".6" opacity=".8"/>
+      </symbol>
+      <symbol id="euca" overflow="visible">
+        <path d="M0,0 C14,-4 30,-4 52,-12" stroke="#B5995A" stroke-width="1" fill="none"/>
+        <g fill="#FBF7EE" stroke="#B5995A" stroke-width=".9"><circle cx="10" cy="-6" r="5"/><circle cx="18" cy="3" r="5.5"/><circle cx="28" cy="-10" r="5"/><circle cx="37" cy="-1" r="5.5"/><circle cx="46" cy="-15" r="4.5"/></g>
+      </symbol>
+      <symbol id="spray" overflow="visible">
+        <g fill="#A9B89A"><use href="#leaf" x="34" y="26" transform="rotate(-25 34 26)"/><use href="#leaf" x="30" y="34" transform="rotate(75 30 34)"/></g>
+        <g fill="#6F8467"><use href="#leaf" x="44" y="30" transform="rotate(-5 44 30)"/><use href="#leaf" x="26" y="40" transform="rotate(100 26 40)"/></g>
+        <use href="#euca" x="56" y="24" transform="rotate(-6 56 24)"/>
+        <use href="#hydrangea" x="20" y="20"/>
+        <use href="#rose" x="54" y="40" transform="scale(.85)" style="transform-origin:54px 40px"/>
+        <use href="#rose" x="84" y="24" transform="scale(.55)" style="transform-origin:84px 24px"/>
+        <use href="#orchid" x="26" y="66" transform="rotate(12 26 66) scale(.8)" style="transform-origin:26px 66px"/>
+        <g fill="#FBF7EE" stroke="#B5995A" stroke-width=".8"><circle cx="96" cy="38" r="2.2"/><circle cx="104" cy="32" r="1.8"/><circle cx="44" cy="86" r="2"/><circle cx="38" cy="94" r="1.6"/><circle cx="72" cy="56" r="1.8"/></g>
+      </symbol>
+      <symbol id="corner" overflow="visible">
+        <g fill="none" stroke="#C9B27C" stroke-width="1.1" stroke-linecap="round">
+          <path d="M0,46 L0,10 Q0,0 10,0 L46,0"/>
+          <path d="M6,30 C6,14 14,6 30,6"/>
+          <path d="M12,22 C14,15 17,13 22,12"/>
+        </g>
+        <polygon points="6,2 9,4 9,8 6,10 3,8 3,4" fill="#C9B27C" transform="translate(4 4)"/>
+      </symbol>
+      <symbol id="roseW" overflow="visible">
+        <g fill="#FFFEFA" stroke="#D6CEBB" stroke-width=".7">
+          <ellipse cx="0" cy="-13" rx="12" ry="10"/><ellipse cx="0" cy="-13" rx="12" ry="10" transform="rotate(60)"/><ellipse cx="0" cy="-13" rx="12" ry="10" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-13" rx="12" ry="10" transform="rotate(180)"/><ellipse cx="0" cy="-13" rx="12" ry="10" transform="rotate(240)"/><ellipse cx="0" cy="-13" rx="12" ry="10" transform="rotate(300)"/>
+          <circle r="15" fill="#FBF8F0" stroke="none"/>
+          <ellipse cx="0" cy="-7" rx="8" ry="6.5" transform="rotate(20)"/><ellipse cx="0" cy="-7" rx="8" ry="6.5" transform="rotate(92)"/><ellipse cx="0" cy="-7" rx="8" ry="6.5" transform="rotate(164)"/>
+          <ellipse cx="0" cy="-7" rx="8" ry="6.5" transform="rotate(236)"/><ellipse cx="0" cy="-7" rx="8" ry="6.5" transform="rotate(308)"/>
+          <circle r="6" fill="#F7F2E6"/>
+        </g>
+        <path d="M-3,-1 C-3,-5 4,-5 4,0 C4,3 0,4 -1,2" fill="none" stroke="#CFC6B2" stroke-width=".9" stroke-linecap="round"/>
+        <circle r="22" fill="url(#roseShadeW)"/>
+      </symbol>
+      <radialGradient id="roseShadeW" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#CFC6B2" stop-opacity=".35"/></radialGradient>
+      <symbol id="floretW" overflow="visible">
+        <g fill="#FFFEFA" stroke="#D9D2C2" stroke-width=".5">
+          <ellipse cy="-3.3" rx="2.7" ry="3.4"/><ellipse cy="-3.3" rx="2.7" ry="3.4" transform="rotate(90)"/>
+          <ellipse cy="-3.3" rx="2.7" ry="3.4" transform="rotate(180)"/><ellipse cy="-3.3" rx="2.7" ry="3.4" transform="rotate(270)"/>
+        </g>
+        <circle r="1.1" fill="#C4CFB6"/>
+      </symbol>
+      <symbol id="hydrangeaW" overflow="visible">
+        <circle r="21" fill="#F1EEE4"/>
+        <use href="#floretW" x="0" y="0"/><use href="#floretW" x="-11" y="-4"/><use href="#floretW" x="10" y="-6"/>
+        <use href="#floretW" x="-4" y="-14"/><use href="#floretW" x="8" y="8"/><use href="#floretW" x="-9" y="9"/>
+        <use href="#floretW" x="15" y="4"/><use href="#floretW" x="-16" y="4"/><use href="#floretW" x="4" y="16"/>
+        <use href="#floretW" x="9" y="-15"/><use href="#floretW" x="-14" y="-12"/><use href="#floretW" x="-3" y="5" transform="rotate(30)"/>
+      </symbol>
+      <symbol id="orchidW" overflow="visible">
+        <g fill="#FFFEFA" stroke="#D8D1BF" stroke-width=".7">
+          <ellipse cx="0" cy="-13" rx="5" ry="11"/>
+          <ellipse cx="-9" cy="9" rx="4.5" ry="10" transform="rotate(35 -9 9)"/>
+          <ellipse cx="9" cy="9" rx="4.5" ry="10" transform="rotate(-35 9 9)"/>
+          <ellipse cx="-11" cy="-1" rx="11" ry="9"/>
+          <ellipse cx="11" cy="-1" rx="11" ry="9"/>
+        </g>
+        <path d="M-4,2 C-4,9 4,9 4,2 C3,0 -3,0 -4,2Z" fill="#EADFD6"/>
+        <circle cy="-1" r="2.2" fill="#E3D3A6"/>
+      </symbol>
+      <symbol id="leafW" overflow="visible">
+        <path d="M0,0 C10,-10 30,-10 44,0 C30,10 10,10 0,0Z"/>
+        <path d="M3,0 L40,0" stroke="#FAF6EC" stroke-opacity=".35" stroke-width=".8" fill="none"/>
+      </symbol>
+      <symbol id="eucaW" overflow="visible">
+        <path d="M0,0 C14,-4 30,-4 52,-12" stroke="#7E9278" stroke-width="1.2" fill="none"/>
+        <g fill="#A9B89A" stroke="#93A585" stroke-width=".5"><circle cx="10" cy="-6" r="5"/><circle cx="18" cy="3" r="5.5"/><circle cx="28" cy="-10" r="5"/><circle cx="37" cy="-1" r="5.5"/><circle cx="46" cy="-15" r="4.5"/></g>
+      </symbol>
+    </defs>
+  </svg>
+
+<div id="envelope" role="dialog" aria-label="Wedding invitation">
+
+  <p class="env-to"><span id="envTo">With joy, we invite you</span><br><span class="zh" style="font-size:1.1rem;letter-spacing:.3em">敬请光临</span></p>
+
+  <div class="env-wrap">
+    <div class="env-card">
+      <svg viewBox="0 0 400 276" preserveAspectRatio="none" aria-hidden="true">
+        <rect width="400" height="276" fill="#FAF6EC"/>
+        <path d="M0,276 L178,150 M400,276 L222,150" stroke="#E2DACA" stroke-width="1.2" fill="none"/>
+        <path d="M0,276 L178,150 L222,150 L400,276Z" fill="#F6F1E5"/>
+        <rect width="400" height="276" filter="url(#paperFibre)"/>
+        <rect width="400" height="276" filter="url(#paperGrain)"/>
+        <rect x="10" y="10" width="380" height="256" fill="none" stroke="#C9B27C" stroke-width=".7" opacity=".55"/>
+      </svg>
+      <svg class="env-flap" viewBox="0 0 400 171" preserveAspectRatio="none" aria-hidden="true">
+        <clipPath id="flapClip"><polygon points="0,0 400,0 200,171"/></clipPath>
+        <g clip-path="url(#flapClip)">
+          <rect width="400" height="171" fill="#FCF9F2"/>
+          <rect width="400" height="171" filter="url(#paperFibre)"/>
+          <rect width="400" height="171" filter="url(#paperGrain)"/>
+        </g>
+        <polygon points="22,0 378,0 200,152" fill="none" stroke="#C9B27C" stroke-width=".8" opacity=".6"/>
+      </svg>
+    </div>
+
+    <svg class="env-flowers" viewBox="0 0 400 276" aria-hidden="true">
+      <!-- bottom-left spray -->
+      <g transform="translate(0 276) scale(1.45) translate(0 -276)">
+      <g fill="#6F8467"><use href="#leafW" x="40" y="236" transform="rotate(250 40 236)"/><use href="#leafW" x="96" y="262" transform="rotate(-35 96 262)"/></g>
+      <g fill="#A9B89A"><use href="#leafW" x="24" y="226" transform="rotate(275 24 226)"/><use href="#leafW" x="100" y="268" transform="rotate(5 100 268)"/></g>
+      <g fill="#6F8467"><use href="#leafW" x="60" y="250" transform="rotate(160 60 250)"/><use href="#leafW" x="70" y="246" transform="rotate(205 70 246)"/></g>
+      <g fill="#A9B89A"><use href="#leafW" x="80" y="244" transform="rotate(-20 80 244)"/><use href="#leafW" x="54" y="232" transform="rotate(235 54 232)"/></g>
+      <use href="#eucaW" x="70" y="258" transform="rotate(170 70 258)"/>
+      <use href="#eucaW" x="96" y="250" transform="rotate(-8 96 250)"/>
+      <use href="#hydrangeaW" x="34" y="250"/>
+      <use href="#roseW" x="78" y="256"/>
+      <use href="#orchidW" x="30" y="206" transform="rotate(-15 30 206)"/>
+      <use href="#roseW" x="118" y="266" transform="scale(.62)" style="transform-origin:118px 266px"/>
+      <g fill="#FFFEFA" stroke="#D8D1BF" stroke-width=".4"><circle cx="112" cy="232" r="2.4"/><circle cx="120" cy="238" r="2"/><circle cx="104" cy="226" r="1.8"/><circle cx="12" cy="182" r="2.2"/><circle cx="18" cy="174" r="1.8"/></g>
+      </g>
+
+      <!-- top-right spray -->
+      <g transform="translate(400 0) scale(1.45) translate(-400 0)">
+      <g fill="#6F8467"><use href="#leafW" x="360" y="40" transform="rotate(70 360 40)"/><use href="#leafW" x="306" y="16" transform="rotate(175 306 16)"/></g>
+      <g fill="#A9B89A"><use href="#leafW" x="376" y="48" transform="rotate(95 376 48)"/><use href="#leafW" x="300" y="10" transform="rotate(200 300 10)"/></g>
+      <g fill="#6F8467"><use href="#leafW" x="350" y="30" transform="rotate(-20 350 30)"/><use href="#leafW" x="340" y="34" transform="rotate(25 340 34)"/></g>
+      <g fill="#A9B89A"><use href="#leafW" x="330" y="30" transform="rotate(160 330 30)"/><use href="#leafW" x="352" y="44" transform="rotate(60 352 44)"/></g>
+      <use href="#eucaW" x="340" y="20" transform="rotate(-10 340 20)"/>
+      <use href="#eucaW" x="318" y="26" transform="rotate(188 318 26)"/>
+      <use href="#roseW" x="370" y="26"/>
+      <use href="#hydrangeaW" x="330" y="18" transform="scale(.8)" style="transform-origin:330px 18px"/>
+      <use href="#orchidW" x="384" y="68" transform="rotate(20 384 68)"/>
+      <g fill="#FFFEFA" stroke="#D8D1BF" stroke-width=".4"><circle cx="296" cy="40" r="2.2"/><circle cx="288" cy="34" r="1.8"/><circle cx="392" cy="98" r="2"/></g>
+      </g>
+    </svg>
+
+    <button class="env-seal" id="openBtn" aria-label="Open the invitation">
+      <svg viewBox="0 0 100 100" aria-hidden="true" width="100%" height="100%">
+        <defs><linearGradient id="goldSeal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCC791"/><stop offset=".55" stop-color="#C9B27C"/><stop offset="1" stop-color="#A88F55"/></linearGradient></defs>
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="url(#goldSeal)"/>
+        <polygon points="50,12 83,31 83,69 50,88 17,69 17,31" fill="none" stroke="#3F4A36" stroke-width="1.2" opacity=".55"/>
+        <text x="50" y="62" text-anchor="middle" font-size="34" fill="#3F4A36" font-family="Noto Serif SC, Noto Serif CJK SC, Songti SC, serif">囍</text>
+      </svg>
+    </button>
+  </div>
+  <p class="eyebrow env-hint">Open with love · 轻触开启</p>
+</div>
+
+<header class="hero">
+  <picture>
+    <source media="(min-aspect-ratio: 1/1)" id="heroWide">
+    <img id="heroImg" alt="The couple">
+  </picture>
+  <div class="hero-inner"><div class="glass">
+    <p class="eyebrow" style="color:#FFFDF8">An evening of love &amp; celebration</p>
+    <h1 class="names" id="names"></h1>
+    <p class="names-zh" id="namesZh"></p>
+    <p class="bless">百年好合 · 永结同心</p>
+    <p class="facts">
+      Saturday, 10 April 2027<br>
+      <span id="timeLine"></span><br>
+      <a id="mapLink" target="_blank" rel="noopener">HortPark · Multi-Purpose Hall <span class="zh" style="font-size:.85em">园艺林</span></a>
+    </p>
+    <a class="btn light" href="#rsvp">RSVP <span class="zh" style="letter-spacing:.1em;margin-left:8px">回复</span></a>
+  </div></div>
+</header>
+
+<main>
+  <div class="formal-wrap">
+  <div class="formal frame en" data-sprays="tl br">
+    <p class="small">Together with their families</p>
+    <p class="couple" id="enCouple"></p>
+    <p class="req"><em>joyfully invite you to celebrate their marriage over an evening of dinner, laughter and love</em></p>
+    <div class="rule"></div>
+    <p class="when">Saturday, the tenth of April<br>two thousand and twenty-seven<br><span id="timeWords"></span></p>
+    <div class="rule"></div>
+    <p>HortPark · Multi-Purpose Hall<br><span style="font-size:1rem;color:var(--muted)">33 Hyderabad Road, Singapore 119578</span></p>
+    <p class="closing"><em>Your presence would make our day complete</em></p>
+  </div>
+  <div class="formal frame" data-sprays="tl br" lang="zh-Hans">
+    <p>诚挚邀请您出席</p>
+    <p class="big">我们的婚宴</p>
+    <p>2027年4月10日（星期六）</p>
+    <p id="timeZh"></p>
+    <p>园艺林 · 多功能厅</p>
+    <p>期待您的光临</p>
+    <p class="sign" id="signZh"></p>
+  </div></div>
+  <div class="strip" id="strip" aria-label="Photos of the couple"></div>
+
+  <section class="rsvp" id="rsvp">
+    <div class="box frame" data-sprays="tr bl">
+      <form id="form" novalidate>
+        <p class="eyebrow" style="color:var(--muted)">Kindly reply by <span id="rsvpBy"></span></p>
+        <p class="zh" style="margin:.3rem 0 0;color:var(--muted);font-size:.9rem" id="rsvpByZh"></p>
+        <h2>Will you <em>celebrate with us?</em> <span class="zh" style="font-size:1.4rem;display:block;margin-top:6px;letter-spacing:.2em">敬请回复</span></h2>
+        <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
+
+        <div class="field">
+          <label class="lbl" for="name">Your name <span class="zh">姓名</span></label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label class="lbl" for="phone">Mobile number <span class="zh">手机</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+        </div>
+
+        <fieldset>
+          <legend class="lbl">Will you be joining us? <span class="zh">是否出席</span></legend>
+          <div class="choice">
+            <input type="radio" id="yes" name="attending" value="Yes"><label for="yes">Joyfully accepts<span class="zh">欣然出席</span></label>
+            <input type="radio" id="no" name="attending" value="No"><label for="no">Regretfully declines<span class="zh">未能出席</span></label>
+          </div>
+        </fieldset>
+
+        <div id="yesFields" class="hide">
+          <fieldset class="inline">
+            <legend class="lbl" style="float:left">Guests, including you <span class="zh">出席人数</span></legend>
+            <div class="stepper">
+              <button type="button" data-step="-1" aria-label="Fewer guests">−</button>
+              <output id="paxOut" aria-live="polite">1</output>
+              <button type="button" data-step="1" aria-label="More guests">+</button>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="lbl">Any dietary requirements? <span class="zh">饮食需求</span> <span style="text-transform:none;letter-spacing:0">(optional)</span></legend>
+            <div class="chips" id="chips"></div>
+          </fieldset>
+        </div>
+
+        <p class="error hide" id="err" role="alert"></p>
+        <button class="btn" type="submit" id="send" style="width:100%">Send my reply · <span class="zh" style="letter-spacing:.1em">送出</span></button>
+      </form>
+
+      <div class="thanks hide" id="thanks" tabindex="-1">
+        <h2 id="tTitle"></h2>
+        <p id="tMsg"></p>
+        <div class="actions">
+          <button class="btn" type="button" id="calBtn">Add to calendar&nbsp;&nbsp;<span class="zh">加入日历</span></button>
+          <button class="btn ghost" type="button" id="editBtn">Update my reply&nbsp;&nbsp;<span class="zh">修改</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+/* ============ EDIT THESE ============ */
+const CONFIG = {
+  bride: 'Yong Yu',
+  groom: 'Lawrence',
+  brideZh: '詠渝',
+  groomZh: '幸财',
+  SCRIPT_URL: '',                       // Apps Script Web App URL (ends in /exec)
+  time: 'Dinner reception at 6:30 PM',
+  timeZh: '晚上6点30分',
+  timeWords: 'at half past six in the evening',
+  start: '2027-04-10T18:30:00+08:00',
+  end:   '2027-04-10T22:30:00+08:00',
+  rsvpBy: '28 February 2027',
+  rsvpByZh: '请于2月28日前回复',
+  maxPax: 4,
+  diet: [['Vegetarian', '素食'], ['No beef', '不吃牛肉'], ['No pork', '不吃猪肉'], ['No seafood', '不吃海鲜']],
+  contact: 'With love and gratitude. For any questions, simply WhatsApp us at [your number] · 如有疑问，欢迎联系我们',
+  cover: 'photos/01.jpg',               // phone cover
+  coverWide: 'photos/04.jpg',           // laptop cover
+  photos: ['photos/02.jpg', 'photos/03.jpg', 'photos/04.jpg', 'photos/05.jpg', 'photos/06.jpg']
+};
+/* ==================================== */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+$('#names').innerHTML = `${esc(CONFIG.bride)} <em>&amp;</em> ${esc(CONFIG.groom)}`;
+document.querySelectorAll('.frame').forEach(el => {
+  const sprays = (el.dataset.sprays || '').split(' ').filter(Boolean);
+  el.insertAdjacentHTML('afterbegin',
+    '<svg class="fr-paper" aria-hidden="true" preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#paperFibre)"/><rect width="100%" height="100%" filter="url(#paperGrain)"/></svg>' +
+    '<span class="fr-inner" aria-hidden="true"></span>' +
+    ['tl','tr','bl','br'].map(c => `<svg class="fr-corner ${c}" aria-hidden="true"><use href="#corner"/></svg>`).join('') +
+    sprays.map(c => `<svg class="fr-spray ${c}" viewBox="0 0 130 110" aria-hidden="true"><use href="#spray"/></svg>`).join(''));
+});
+$('#enCouple').innerHTML = `${esc(CONFIG.bride)} <em>&amp;</em> ${esc(CONFIG.groom)}`;
+$('#timeWords').textContent = CONFIG.timeWords;
+$('#namesZh').textContent = `${CONFIG.brideZh} · ${CONFIG.groomZh}`;
+$('#signZh').textContent = `${CONFIG.brideZh}　${CONFIG.groomZh}　敬邀`;
+$('#timeZh').textContent = CONFIG.timeZh;
+$('#rsvpByZh').textContent = CONFIG.rsvpByZh;
+$('#timeLine').textContent = CONFIG.time;
+$('#rsvpBy').textContent = CONFIG.rsvpBy;
+$('#foot').innerHTML = `<span class="zh">花开富贵 · 喜气盈门</span>${esc(CONFIG.contact)}`;
+$('#mapLink').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('HortPark Multi-Purpose Hall, 33 Hyderabad Road, Singapore 119578');
+document.title = `${CONFIG.bride} & ${CONFIG.groom} · 10 April 2027`;
+$('#heroImg').src = CONFIG.cover;
+document.querySelector('.hero').style.setProperty('--cover', `url("${CONFIG.cover}")`);
+if (CONFIG.coverWide) $('#heroWide').srcset = CONFIG.coverWide; else $('#heroWide').remove();
+$('#strip').innerHTML = CONFIG.photos.map(p => `<img src="${esc(p)}" alt="" loading="lazy">`).join('');
+
+// Personal link: ?to=Auntie%20Mei&pax=2
+const q = new URLSearchParams(location.search);
+if (q.get('to')) { $('#envTo').textContent = `Dear ${q.get('to')},`; $('#name').value = q.get('to'); }
+if (parseInt(q.get('pax'), 10) > 0) CONFIG.maxPax = Math.min(parseInt(q.get('pax'), 10), 10);
+
+$('#openBtn').addEventListener('click', () => {
+  $('#envelope').classList.add('opening');
+  setTimeout(() => $('#envelope').classList.add('opened'), 550);
+});
+
+// Form
+let pax = 1;
+const setPax = n => { pax = Math.min(CONFIG.maxPax, Math.max(1, n)); $('#paxOut').textContent = pax; };
+document.querySelectorAll('[data-step]').forEach(b => b.onclick = () => setPax(pax + +b.dataset.step));
+$('#chips').innerHTML = CONFIG.diet.map(([en, zh], i) => `<input type="checkbox" id="d${i}" name="diet" value="${esc(en)}"><label for="d${i}">${esc(en)}&nbsp;<span class="zh">${esc(zh)}</span></label>`).join('');
+document.querySelectorAll('[name=attending]').forEach(r => r.onchange = () => $('#yesFields').classList.toggle('hide', r.value !== 'Yes' || !r.checked));
+
+const form = $('#form');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const fd = new FormData(form);
+  const err = msg => { $('#err').textContent = msg; $('#err').classList.remove('hide'); };
+  $('#err').classList.add('hide');
+  const name = (fd.get('name') || '').trim(), phone = (fd.get('phone') || '').trim(), attending = fd.get('attending');
+  if (!name) return err('May we have your name, please?'), $('#name').focus();
+  if (!phone) return err('May we have your mobile number, please?'), $('#phone').focus();
+  if (!attending) return err('Do let us know if you will be joining us.');
+
+  const data = new URLSearchParams({
+    website: fd.get('website') || '', name, phone, attending,
+    pax: attending === 'Yes' ? pax : 0,
+    dietary: attending === 'Yes' ? fd.getAll('diet').join(', ') : ''
+  });
+  const btn = $('#send'); btn.disabled = true; btn.textContent = 'Sending… 送出中';
+  try {
+    if (CONFIG.SCRIPT_URL) await fetch(CONFIG.SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data });
+    else console.warn('SCRIPT_URL not set; preview only.', Object.fromEntries(data));
+    const first = name.split(' ')[0];
+    const yes = attending === 'Yes';
+    $('#tTitle').textContent = yes ? `We can't wait to celebrate with you, ${first}!` : `You'll be dearly missed, ${first}`;
+    $('#tMsg').innerHTML = yes
+      ? `${pax > 1 ? `${pax} seats are` : 'Your seat is'} lovingly reserved for Saturday, 10 April. Thank you for being part of our day.<br><span class="zh">已为您预留${pax}个座位，期待与您共沾喜气！</span>`
+      : `Thank you so much for letting us know. You'll be in our hearts on the day.<br><span class="zh">感谢告知，祝您福寿安康、万事如意。</span>`;
+    $('#calBtn').classList.toggle('hide', !yes);
+    form.classList.add('hide'); $('#thanks').classList.remove('hide'); $('#thanks').focus();
+  } catch (_) {
+    err('So sorry, your reply didn\'t go through. Please try once more.');
+  } finally { btn.disabled = false; btn.innerHTML = 'Send my reply · <span class="zh" style="letter-spacing:.1em">送出</span>'; }
+});
+$('#editBtn').onclick = () => { $('#thanks').classList.add('hide'); form.classList.remove('hide'); };
+
+// Add to calendar (.ics)
+const icsDate = iso => new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+$('#calBtn').onclick = () => {
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding//RSVP//EN','BEGIN:VEVENT',
+    `UID:wedding-20270410@invite`,`DTSTAMP:${icsDate(new Date().toISOString())}`,
+    `DTSTART:${icsDate(CONFIG.start)}`,`DTEND:${icsDate(CONFIG.end)}`,
+    `SUMMARY:${CONFIG.bride} & ${CONFIG.groom}'s Wedding Dinner 婚宴`,
+    'LOCATION:HortPark Multi-Purpose Hall\\, 33 Hyderabad Road\\, Singapore 119578',
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+  a.download = 'wedding-10-april-2027.ics'; document.body.append(a); a.click(); a.remove();
+};
+</script>
+</body>
+</html>
