@@ -11,11 +11,13 @@
 <meta name="theme-color" content="#738667">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@300;400&family=Pinyon+Script&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@300;400&family=Pinyon+Script&family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+Myanmar:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--white:#FFFDF8;--ivory:#F7F4EC;--pale-sage:#C4CFB6;--sage:#A9B89A;--euc:#6F8467;--olive:#3F4A36;--ink:#3B4634;--muted:#5E6B55;--gold:#C9B27C;--sagebg:#738667;--sagebtn:#5F7256;
   --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--zh:'Noto Serif SC','Songti SC','STSong',serif}
 .zh{font-family:var(--zh);font-style:normal}
+.my{font-family:'Noto Sans Myanmar','Padauk','Myanmar Text','Myanmar Sangam MN',sans-serif;font-style:normal;font-weight:400;letter-spacing:0;text-transform:none;line-height:1.9}
+.my-line{display:block;font-size:.82em;opacity:.9;margin-top:2px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -178,7 +180,7 @@ fieldset{border:0;padding:0;margin:0 0 20px}
 .stepper button{width:46px;height:46px;border:0;background:var(--ivory);font-size:1.3rem;cursor:pointer;color:var(--olive)}
 .stepper output{min-width:46px;text-align:center;font-family:var(--serif);font-size:1.4rem}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.chips label{padding:9px 15px;border:1px solid var(--sage);border-radius:999px;cursor:pointer;font-size:.92rem;min-height:44px;display:inline-flex;align-items:center}
+.chips label{white-space:nowrap;padding:9px 15px;border:1px solid var(--sage);border-radius:999px;cursor:pointer;font-size:.92rem;min-height:44px;display:inline-flex;align-items:center}
 .chips input:checked+label{background:var(--pale-sage);border-color:var(--euc);color:var(--olive)}
 .hide{display:none!important}
 .hp{position:absolute;left:-9999px}
@@ -354,7 +356,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
 
   <p class="env-to"><span id="envTo"></span></p>
 
-  <p class="env-title">Tap the envelope to open<span class="zh">轻触信封开启</span></p>
+  <p class="env-title">Tap the envelope to open<span class="zh">轻触信封开启</span><span class="my my-line" lang="my" style="font-style:normal;font-size:.6em">စာအိတ်ကို နှိပ်၍ ဖွင့်ပါ</span></p>
   <div class="env-wrap">
     <div class="env-card">
       <svg viewBox="0 0 400 276" preserveAspectRatio="none" aria-hidden="true">
@@ -434,8 +436,9 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
       Saturday, 10 April 2027<br>
       <span id="timeLine"></span><br>
       <a id="mapLink" target="_blank" rel="noopener">HortPark · Multi-Purpose Hall <span class="zh" style="font-size:.85em">园艺林</span></a>
+      <span class="my my-line" lang="my" style="font-size:.72em">မင်္ဂလာ ညစာစားပွဲ · ၂၀၂၇ ဧပြီ ၁၀ (စနေနေ့) ညနေ ၆:၃၀</span>
     </p>
-    <a class="btn light" href="#rsvp">RSVP <span class="zh" style="letter-spacing:.1em;margin-left:8px">回复</span></a>
+    <a class="btn light" href="#rsvp">RSVP <span class="zh" style="letter-spacing:.1em;margin-left:8px">回复</span><span class="my" lang="my" style="margin-left:8px;font-size:.95em">ပြန်ကြားရန်</span></a>
   </div></div>
 </header>
 
@@ -449,6 +452,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
     <p>园艺林 · 多功能厅</p>
     <p>期待您的光临</p>
     <p class="sign" id="signZh"></p>
+    <p class="my" lang="my" style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(201,178,124,.5);font-size:.95rem;line-height:2;color:#4F5A47">ကျွန်ုပ်တို့၏ မင်္ဂလာ ညစာစားပွဲသို့<br>ကြွရောက်ချီးမြှင့်ပေးပါရန်<br>လေးစားစွာ ဖိတ်ကြားအပ်ပါသည်။</p>
   </div></div>
   <div class="strip" id="strip" aria-label="Photos of the couple"></div>
 
@@ -457,29 +461,30 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
       <form id="form" novalidate>
         <p class="eyebrow" style="color:var(--muted)">Kindly reply by <span id="rsvpBy"></span></p>
         <p class="zh" style="margin:.3rem 0 0;color:var(--muted);font-size:.9rem" id="rsvpByZh"></p>
-        <h2>Will you <em>celebrate with us?</em> <span class="zh" style="font-size:1.4rem;display:block;margin-top:6px;letter-spacing:.2em">敬请回复</span></h2>
+        <p class="my" lang="my" style="margin:.1rem 0 0;color:var(--muted);font-size:.85rem">၂၀၂၇ ဖေဖော်ဝါရီ ၂၈ ရက်နေ့ မတိုင်မီ ပြန်ကြားပေးပါ</p>
+        <h2>Will you <em>celebrate with us?</em> <span class="zh" style="font-size:1.4rem;display:block;margin-top:6px;letter-spacing:.2em">敬请回复</span><span class="my" lang="my" style="font-size:1.05rem;display:block;margin-top:4px">ကြွရောက်နိုင်ပါသလား</span></h2>
         <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
 
         <div class="field">
-          <label class="lbl" for="name">Your name <span class="zh">姓名</span></label>
+          <label class="lbl" for="name">Your name <span class="zh">姓名</span> <span class="my" lang="my">အမည်</span></label>
           <input id="name" name="name" autocomplete="name" required>
         </div>
         <div class="field">
-          <label class="lbl" for="phone">Mobile number <span class="zh">手机</span></label>
+          <label class="lbl" for="phone">Mobile number <span class="zh">手机</span> <span class="my" lang="my">ဖုန်းနံပါတ်</span></label>
           <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
         </div>
 
         <fieldset>
-          <legend class="lbl">Will you be joining us? <span class="zh">是否出席</span></legend>
+          <legend class="lbl">Will you be joining us? <span class="zh">是否出席</span> <span class="my" lang="my">တက်ရောက်မည်လား</span></legend>
           <div class="choice">
-            <input type="radio" id="yes" name="attending" value="Yes"><label for="yes">Joyfully accepts<span class="zh">欣然出席</span></label>
-            <input type="radio" id="no" name="attending" value="No"><label for="no">Regretfully declines<span class="zh">未能出席</span></label>
+            <input type="radio" id="yes" name="attending" value="Yes"><label for="yes">Joyfully accepts<span class="zh">欣然出席</span><span class="my" lang="my" style="font-size:.78rem">တက်ရောက်ပါမည်</span></label>
+            <input type="radio" id="no" name="attending" value="No"><label for="no">Regretfully declines<span class="zh">未能出席</span><span class="my" lang="my" style="font-size:.78rem">မတက်ရောက်နိုင်ပါ</span></label>
           </div>
         </fieldset>
 
         <div id="yesFields" class="hide">
           <fieldset class="inline">
-            <legend class="lbl" style="float:left">Guests, including you <span class="zh">出席人数</span></legend>
+            <legend class="lbl" style="float:left">Guests, including you <span class="zh">出席人数</span> <span class="my" lang="my">လူဦးရေ</span></legend>
             <div class="stepper">
               <button type="button" data-step="-1" aria-label="Fewer guests">−</button>
               <output id="paxOut" aria-live="polite">1</output>
@@ -487,13 +492,13 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
             </div>
           </fieldset>
           <fieldset>
-            <legend class="lbl">Any dietary requirements? <span class="zh">饮食需求</span> <span style="text-transform:none;letter-spacing:0">(optional)</span></legend>
+            <legend class="lbl">Any dietary requirements? <span class="zh">饮食需求</span> <span class="my" lang="my">အစားအသောက် ရှောင်ရန်</span> <span style="text-transform:none;letter-spacing:0">(optional)</span></legend>
             <div class="chips" id="chips"></div>
           </fieldset>
         </div>
 
         <p class="error hide" id="err" role="alert"></p>
-        <button class="btn" type="submit" id="send" style="width:100%">Send my reply · <span class="zh" style="letter-spacing:.1em">送出</span></button>
+        <button class="btn" type="submit" id="send" style="width:100%">Send my reply · <span class="zh" style="letter-spacing:.1em">送出</span> · <span class="my" lang="my">ပို့မည်</span></button>
       </form>
 
       <div class="thanks hide" id="thanks" tabindex="-1">
@@ -526,7 +531,7 @@ const CONFIG = {
   rsvpBy: '28 February 2027',
   rsvpByZh: '请于2月28日前回复',
   maxPax: 4,
-  diet: [['Vegetarian', '素食'], ['No beef', '不吃牛肉'], ['No pork', '不吃猪肉'], ['No seafood', '不吃海鲜']],
+  diet: [['Vegetarian', '素食', 'သက်သတ်လွတ်'], ['No beef', '不吃牛肉', 'အမဲသား မစား'], ['No pork', '不吃猪肉', 'ဝက်သား မစား'], ['No seafood', '不吃海鲜', 'ပင်လယ်စာ မစား']],
   contact: 'With love and gratitude. For any questions, simply WhatsApp us at',
   whatsapp: '6590464045', whatsappShow: '9046 4045',
   cover: 'photos/01.jpg',               // phone cover
@@ -555,7 +560,7 @@ $('#timeZh').textContent = CONFIG.timeZh;
 $('#rsvpByZh').textContent = CONFIG.rsvpByZh;
 $('#timeLine').textContent = CONFIG.time;
 $('#rsvpBy').textContent = CONFIG.rsvpBy;
-$('#foot').innerHTML = `<span class="zh">花开富贵 · 喜气盈门</span>${esc(CONFIG.contact)} <a href="https://wa.me/${esc(CONFIG.whatsapp)}" target="_blank" rel="noopener" style="color:inherit">${esc(CONFIG.whatsappShow)}</a>.<br>如有疑问，欢迎联系我们`;
+$('#foot').innerHTML = `<span class="zh">花开富贵 · 喜气盈门</span>${esc(CONFIG.contact)} <a href="https://wa.me/${esc(CONFIG.whatsapp)}" target="_blank" rel="noopener" style="color:inherit">${esc(CONFIG.whatsappShow)}</a>.<br>如有疑问，欢迎联系我们<br><span class="my" lang="my">မေးမြန်းလိုပါက WhatsApp ဖြင့် ဆက်သွယ်ပါ</span>`;
 $('#mapLink').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('HortPark Multi-Purpose Hall, 33 Hyderabad Road, Singapore 119578');
 document.title = `${CONFIG.bride} & ${CONFIG.groom} · 10 April 2027`;
 $('#heroImg').src = CONFIG.cover;
@@ -577,7 +582,7 @@ $('#openBtn').addEventListener('click', () => {
 let pax = 1;
 const setPax = n => { pax = Math.min(CONFIG.maxPax, Math.max(1, n)); $('#paxOut').textContent = pax; };
 document.querySelectorAll('[data-step]').forEach(b => b.onclick = () => setPax(pax + +b.dataset.step));
-$('#chips').innerHTML = CONFIG.diet.map(([en, zh], i) => `<input type="checkbox" id="d${i}" name="diet" value="${esc(en)}"><label for="d${i}">${esc(en)}&nbsp;<span class="zh">${esc(zh)}</span></label>`).join('');
+$('#chips').innerHTML = CONFIG.diet.map(([en, zh, my], i) => `<input type="checkbox" id="d${i}" name="diet" value="${esc(en)}"><label for="d${i}">${esc(en)}&nbsp;<span class="zh">${esc(zh)}</span>${my ? `&nbsp;<span class="my" lang="my">${esc(my)}</span>` : ''}</label>`).join('');
 document.querySelectorAll('[name=attending]').forEach(r => r.onchange = () => $('#yesFields').classList.toggle('hide', r.value !== 'Yes' || !r.checked));
 
 const form = $('#form');
@@ -604,13 +609,13 @@ form.addEventListener('submit', async e => {
     const yes = attending === 'Yes';
     $('#tTitle').textContent = yes ? `We can't wait to celebrate with you, ${first}!` : `You'll be dearly missed, ${first}`;
     $('#tMsg').innerHTML = yes
-      ? `${pax > 1 ? `${pax} seats are` : 'Your seat is'} lovingly reserved for Saturday, 10 April. Thank you for being part of our day.<br><span class="zh">已为您预留${pax}个座位，期待与您共沾喜气！</span>`
-      : `Thank you so much for letting us know. You'll be in our hearts on the day.<br><span class="zh">感谢告知，祝您福寿安康、万事如意。</span>`;
+      ? `${pax > 1 ? `${pax} seats are` : 'Your seat is'} lovingly reserved for Saturday, 10 April. Thank you for being part of our day.<br><span class="zh">已为您预留${pax}个座位，期待与您共沾喜气！</span><br><span class="my" lang="my">ကြွရောက်မည်ဖြစ်၍ ကျေးဇူးအထူးတင်ပါသည်။</span>`
+      : `Thank you so much for letting us know. You'll be in our hearts on the day.<br><span class="zh">感谢告知，祝您福寿安康、万事如意。</span><br><span class="my" lang="my">အသိပေးသည့်အတွက် ကျေးဇူးတင်ပါသည်။</span>`;
     $('#calBtn').classList.toggle('hide', !yes);
     form.classList.add('hide'); $('#thanks').classList.remove('hide'); $('#thanks').focus();
   } catch (_) {
     err('So sorry, your reply didn\'t go through. Please try once more.');
-  } finally { btn.disabled = false; btn.innerHTML = 'Send my reply · <span class="zh" style="letter-spacing:.1em">送出</span>'; }
+  } finally { btn.disabled = false; btn.innerHTML = 'Send my reply · <span class="zh" style="letter-spacing:.1em">送出</span> · <span class="my" lang="my">ပို့မည်</span>'; }
 });
 $('#editBtn').onclick = () => { $('#thanks').classList.add('hide'); form.classList.remove('hide'); };
 
