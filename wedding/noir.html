@@ -82,8 +82,8 @@ button,input{font:inherit;color:inherit}
 .deco-frame>.fanTop{position:absolute;left:50%;top:-1px;transform:translateX(-50%);width:80px;height:40px;overflow:visible;background:var(--ink);padding:0 10px}
 
 /* Formal cards */
-.formal-wrap{padding:72px 22px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:56px 48px;max-width:1080px;margin:0 auto}
-.formal{padding:70px 28px 60px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.formal-wrap{padding:72px 22px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:56px 48px;max-width:1080px;margin:0 auto}
+.formal{max-width:520px;width:100%;margin:0 auto;padding:70px 28px 60px;text-align:center;display:flex;flex-direction:column;justify-content:center}
 .formal p{margin:0;text-wrap:balance}
 .formal.en{font-family:var(--serif);font-size:1.22rem;line-height:1.75}
 .formal.en .small{font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
@@ -244,7 +244,7 @@ footer .zh{display:block;font-size:1.05rem;letter-spacing:.4em;color:var(--gold)
     <span class="base"></span>
   </div>
   <div class="hero-text">
-    <p class="eyebrow">An evening of love &amp; celebration</p>
+    <p class="eyebrow">We would love to invite you to<br>an evening of love &amp; celebration</p>
     <h1 class="names" id="names"></h1>
     <p class="names-zh" id="namesZh"></p>
     <p class="bless">百年好合 · 永结同心</p>
@@ -260,16 +260,6 @@ footer .zh{display:block;font-size:1.05rem;letter-spacing:.4em;color:var(--gold)
 
 <main>
   <div class="formal-wrap">
-    <div class="formal en deco-frame">
-      <p class="small">Together with their families</p>
-      <p class="couple" id="enCouple"></p>
-      <p class="req"><em>joyfully invite you to celebrate their marriage over an evening of dinner, laughter and love</em></p>
-      <svg class="divider" viewBox="0 0 200 12" aria-hidden="true"><use href="#divider"/></svg>
-      <p>Saturday, the tenth of April<br>two thousand and twenty-seven<br><span id="timeWords"></span></p>
-      <svg class="divider" viewBox="0 0 200 12" aria-hidden="true"><use href="#divider"/></svg>
-      <p>HortPark · Multi-Purpose Hall<br><span class="addr">33 Hyderabad Road, Singapore 119578</span></p>
-      <p class="closing"><em>Your presence would make our day complete</em></p>
-    </div>
     <div class="formal zh-card deco-frame" lang="zh-Hans">
       <p>诚挚邀请您出席</p>
       <p class="big">我们的婚宴</p>
@@ -373,8 +363,8 @@ document.querySelectorAll('.frame').forEach(el => {
     ['tl','tr','bl','br'].map(c => `<svg class="fr-corner ${c}" aria-hidden="true"><use href="#corner"/></svg>`).join('') +
     sprays.map(c => `<svg class="fr-spray ${c}" viewBox="0 0 130 110" aria-hidden="true"><use href="#spray"/></svg>`).join(''));
 });
-$('#enCouple').innerHTML = `${esc(CONFIG.bride)} <em>&amp;</em> ${esc(CONFIG.groom)}`;
-$('#timeWords').textContent = CONFIG.timeWords;
+document.querySelector('#enCouple') && ($('#enCouple').innerHTML = `${esc(CONFIG.bride)} <em>&amp;</em> ${esc(CONFIG.groom)}`);
+document.querySelector('#timeWords') && ($('#timeWords').textContent = CONFIG.timeWords);
 $('#namesZh').textContent = `${CONFIG.brideZh} · ${CONFIG.groomZh}`;
 $('#signZh').textContent = `${CONFIG.brideZh}　${CONFIG.groomZh}　敬邀`;
 $('#timeZh').textContent = CONFIG.timeZh;

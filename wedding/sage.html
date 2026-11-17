@@ -63,7 +63,7 @@ button,input{font:inherit;color:inherit}
     -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
   .hero-inner{position:relative;z-index:2;margin-top:-22%;padding:0 14px 22px}
   .glass .names{white-space:nowrap;font-size:min(9.3vw,2.6rem)}
-  .glass .eyebrow{white-space:nowrap;font-size:min(2.75vw,.7rem);letter-spacing:.2em}
+  .glass .eyebrow{font-size:min(2.9vw,.7rem);letter-spacing:.2em;line-height:1.7}
 }
 @media (min-aspect-ratio:1/1) and (min-width:900px){
   .hero{align-items:center}
@@ -121,7 +121,7 @@ fieldset{border:0;padding:0;margin:0 0 20px}
 .names-zh{font-family:var(--zh);font-weight:600;font-size:clamp(1.6rem,5vw,2.3rem);letter-spacing:.3em;margin:-.2rem 0 .3rem;color:#FFFDF8}
 .bless{font-family:var(--zh);letter-spacing:.35em;font-size:1rem;color:#FBF3DC;margin:0 0 1rem}
 .formal{max-width:480px;margin:0 auto;padding:64px 28px;text-align:center;font-family:var(--zh);color:var(--olive);line-height:2.1;font-size:1.05rem}
-.formal-wrap{padding:64px 24px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:72px 56px;max-width:1080px;margin:0 auto;align-items:stretch}
+.formal-wrap{padding:64px 24px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:72px 56px;max-width:1080px;margin:0 auto;align-items:stretch}
 .formal-wrap .formal{margin:0 auto;width:100%;display:flex;flex-direction:column;justify-content:center}
 .formal.en{font-family:var(--serif);font-size:1.22rem;line-height:1.75;color:var(--ink)}
 .formal.en .small{font-family:var(--sans);font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
@@ -354,7 +354,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
     <img id="heroImg" alt="The couple">
   </picture>
   <div class="hero-inner"><div class="glass">
-    <p class="eyebrow" style="color:#FFFDF8">An evening of love &amp; celebration</p>
+    <p class="eyebrow" style="color:#FFFDF8">We would love to invite you to<br>an evening of love &amp; celebration</p>
     <h1 class="names" id="names"></h1>
     <p class="names-zh" id="namesZh"></p>
     <p class="bless">百年好合 · 永结同心</p>
@@ -369,16 +369,6 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
 
 <main>
   <div class="formal-wrap">
-  <div class="formal frame en" data-sprays="tl br">
-    <p class="small">Together with their families</p>
-    <p class="couple" id="enCouple"></p>
-    <p class="req"><em>joyfully invite you to celebrate their marriage over an evening of dinner, laughter and love</em></p>
-    <div class="rule"></div>
-    <p class="when">Saturday, the tenth of April<br>two thousand and twenty-seven<br><span id="timeWords"></span></p>
-    <div class="rule"></div>
-    <p>HortPark · Multi-Purpose Hall<br><span style="font-size:1rem;color:var(--muted)">33 Hyderabad Road, Singapore 119578</span></p>
-    <p class="closing"><em>Your presence would make our day complete</em></p>
-  </div>
   <div class="formal frame" data-sprays="tl br" lang="zh-Hans">
     <p>诚挚邀请您出席</p>
     <p class="big">我们的婚宴</p>
@@ -485,8 +475,8 @@ document.querySelectorAll('.frame').forEach(el => {
     ['tl','tr','bl','br'].map(c => `<svg class="fr-corner ${c}" aria-hidden="true"><use href="#corner"/></svg>`).join('') +
     sprays.map(c => `<svg class="fr-spray ${c}" viewBox="0 0 130 110" aria-hidden="true"><use href="#spray"/></svg>`).join(''));
 });
-$('#enCouple').innerHTML = `${esc(CONFIG.bride)} <em>&amp;</em> ${esc(CONFIG.groom)}`;
-$('#timeWords').textContent = CONFIG.timeWords;
+document.querySelector('#enCouple') && ($('#enCouple').innerHTML = `${esc(CONFIG.bride)} <em>&amp;</em> ${esc(CONFIG.groom)}`);
+document.querySelector('#timeWords') && ($('#timeWords').textContent = CONFIG.timeWords);
 $('#namesZh').textContent = `${CONFIG.brideZh} · ${CONFIG.groomZh}`;
 $('#signZh').textContent = `${CONFIG.brideZh}　${CONFIG.groomZh}　敬邀`;
 $('#timeZh').textContent = CONFIG.timeZh;
