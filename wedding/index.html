@@ -46,17 +46,19 @@ body.show-photo .hero picture,body.show-photo .hero::before{opacity:1;transform:
 body:not(.show-photo) .hero{background-color:#F4F0E8}
 @media (prefers-reduced-motion:reduce){.hero picture,.hero::before{opacity:1;transform:none}}
 /* cursive title over the photo */
-.photo-title{position:absolute;left:0;right:0;top:clamp(56px,21vw,120px);z-index:3;margin:0;padding:10px 12px 18px;text-align:center;pointer-events:none;color:#FFFDF8;
+.photo-title{position:absolute;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 28px);top:clamp(44px,17vw,110px);z-index:3;margin:0;padding:16px 30px 18px;text-align:center;pointer-events:none;color:#3F4A36;isolation:isolate;
   display:flex;flex-direction:column;align-items:center;
-  text-shadow:0 1px 3px rgba(0,0,0,.4),0 4px 26px rgba(0,0,0,.45)}
-.photo-title .pt-a{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.15rem,5vw,1.7rem);letter-spacing:.06em;line-height:1;position:relative;z-index:1}
-.photo-title .pt-love{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery','Segoe Script',cursive;font-weight:400;font-size:clamp(5.2rem,27vw,9.5rem);line-height:.82;margin:-.02em 0 -.08em;letter-spacing:-.01em}
+}
+.photo-title .pt-a{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.15rem,5vw,1.7rem);letter-spacing:.06em;line-height:1;position:relative;z-index:1;color:#5E6B55}
+.photo-title .pt-love{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery','Segoe Script',cursive;font-weight:400;font-size:clamp(4.6rem,23vw,8.5rem);line-height:.82;margin:-.02em 0 -.08em;letter-spacing:-.01em}
 .photo-title .pt-c{display:flex;align-items:center;gap:.35em;line-height:1}
-.photo-title .pt-amp{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive;font-size:clamp(2.6rem,12vw,4.4rem);color:#F4E6BC;line-height:.8}
+.photo-title .pt-amp{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive;font-size:clamp(2.6rem,12vw,4.4rem);color:#A88F55;line-height:.8}
 .photo-title .pt-cel{font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:clamp(.8rem,3.5vw,1.15rem);letter-spacing:.42em;text-transform:uppercase;padding-left:.42em}
-.photo-title::before{content:"";position:absolute;inset:-10% -5%;z-index:-1;opacity:0;transition:opacity 1.4s ease;
-  background:radial-gradient(60% 55% at 50% 50%,rgba(26,28,24,.42) 0%,rgba(26,28,24,.2) 55%,rgba(26,28,24,0) 100%)}
-body.show-title .photo-title::before{opacity:1}
+.photo-title .pt-paper{position:absolute;inset:0;z-index:-1;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease;
+  background:#FAF6EC;box-shadow:0 10px 30px rgba(30,30,25,.28),0 2px 6px rgba(30,30,25,.18);border:1px solid rgba(201,178,124,.75)}
+.photo-title .pt-paper::after{content:"";position:absolute;inset:6px;border:1px solid rgba(201,178,124,.45)}
+.photo-title .pt-paper svg{position:absolute;inset:0;width:100%;height:100%}
+body.show-title .photo-title .pt-paper{opacity:.97}
 .photo-title>span{display:block;padding:0 .18em;-webkit-mask-image:linear-gradient(90deg,#000 0 45%,transparent 55% 100%);mask-image:linear-gradient(90deg,#000 0 45%,transparent 55% 100%);
   -webkit-mask-size:230% 100%;mask-size:230% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .photo-title>.pt-c{display:flex}
@@ -71,7 +73,7 @@ body.show-panel .glass>*:nth-child(2){transition-delay:.15s}body.show-panel .gla
 body.show-panel .glass>*:nth-child(4){transition-delay:.45s}body.show-panel .glass>*:nth-child(5){transition-delay:.6s}
 @media (prefers-reduced-motion:reduce){.photo-title>span{-webkit-mask-image:none;mask-image:none}.glass,.glass>*{opacity:1;transform:none}}
 @media (min-aspect-ratio:1/1) and (min-width:900px){
-  .photo-title{left:36%;right:0;top:1.5vh}
+  .photo-title{left:68%;top:2vh}
   .photo-title .pt-love{font-size:clamp(4.4rem,6.8vw,7.6rem)}
   .photo-title .pt-amp{font-size:clamp(2.4rem,3.4vw,3.8rem)}
 }
@@ -423,7 +425,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
     <source media="(min-aspect-ratio: 1/1)" id="heroWide">
     <img id="heroImg" alt="The couple">
   </picture>
-  <p class="photo-title" aria-label="An evening of love and celebration"><span class="pt-a">an evening of</span><span class="pt-love">Love</span><span class="pt-c"><span class="pt-amp">&amp;</span><span class="pt-cel">Celebration</span></span></p>
+  <p class="photo-title" aria-label="An evening of love and celebration"><i class="pt-paper" aria-hidden="true"><svg preserveAspectRatio="none"><rect width="100%" height="100%" filter="url(#paperFibre)"/><rect width="100%" height="100%" filter="url(#paperGrain)"/></svg></i><span class="pt-a">an evening of</span><span class="pt-love">Love</span><span class="pt-c"><span class="pt-amp">&amp;</span><span class="pt-cel">Celebration</span></span></p>
   <div class="hero-inner"><div class="glass">
     <h1 class="names" id="names"></h1>
     <p class="names-zh" id="namesZh"></p>
