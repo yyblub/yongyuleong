@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yong Yu &amp; Lawrence · 10 April 2027</title>
+<meta name="description" content="You're invited to our wedding dinner · Saturday, 10 April 2027 · HortPark. Kindly RSVP.">
+<meta property="og:title" content="Yong Yu &amp; Lawrence · You're invited">
+<meta property="og:description" content="Wedding dinner · Saturday, 10 April 2027 · HortPark · Kindly RSVP">
+<meta property="og:image" content="photos/01.jpg">
+<meta name="theme-color" content="#E4B7A4">
+<style>html,body{margin:0;background:#F8F2E8}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+<div id="yl-invite">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="yl-paper" cx="50%" cy="45%" r="60%">
+        <stop offset="0" stop-color="#F08A55"/><stop offset=".6" stop-color="#D2482F"/><stop offset="1" stop-color="#A9301F"/>
+      </radialGradient>
+      <radialGradient id="yl-lit" cx="50%" cy="55%" r="60%">
+        <stop offset="0" stop-color="#FFF4C9"/><stop offset=".35" stop-color="#FFC266"/><stop offset=".75" stop-color="#EE6A3A"/><stop offset="1" stop-color="#C23A24"/>
+      </radialGradient>
+      <linearGradient id="yl-goldg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#EAD7A4"/><stop offset=".5" stop-color="#C9A962"/><stop offset="1" stop-color="#A2823F"/>
+      </linearGradient>
+      <!-- sky lantern (天灯): tall paper body, open bottom with flame -->
+      <symbol id="yl-skylantern" viewBox="0 0 60 84" overflow="visible">
+        <path d="M10,4 Q30,-2 50,4 L56,62 Q30,70 4,62 Z" fill="url(#yl-paper)"/>
+        <path d="M10,4 Q30,-2 50,4" fill="none" stroke="#F6C98F" stroke-width="1"/>
+        <path d="M22,2 L18,64 M38,2 L42,64" stroke="#F6C98F" stroke-opacity=".45" stroke-width=".8"/>
+        <path d="M4,62 Q30,70 56,62" fill="none" stroke="#8C2416" stroke-width="1.5"/>
+        <ellipse cx="30" cy="72" rx="4" ry="6" fill="#FFD27A" opacity=".95"/>
+        <ellipse cx="30" cy="73" rx="2" ry="3.4" fill="#FFF6D8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ 1. LIGHT THE LANTERN ============ -->
+  <section class="yl-sky" id="yl-sky" aria-label="Invitation cover">
+    <div class="yl-floaters" id="yl-floaters" aria-hidden="true"></div>
+    <div class="yl-sky-inner">
+      <p class="yl-kicker">Yong Yu &amp; Lawrence · 詠渝 &amp; 幸财</p>
+      <button class="yl-hero-lantern" id="yl-light" aria-label="Light the lantern to open the invitation">
+        <span class="yl-glow"></span>
+        <svg viewBox="0 0 120 170" aria-hidden="true">
+          <line x1="60" y1="0" x2="60" y2="16" stroke="#7A5A2E" stroke-width="1.5"/>
+          <rect x="40" y="14" width="40" height="8" rx="2" fill="url(#yl-goldg)"/>
+          <path class="yl-body" d="M60,20 C112,20 116,62 116,84 C116,112 106,146 60,146 C14,146 4,112 4,84 C4,62 8,20 60,20Z" fill="url(#yl-paper)"/>
+          <g fill="none" stroke="#F6C98F" stroke-opacity=".5" stroke-width="1">
+            <path d="M60,20 C80,22 86,60 86,84 C86,110 80,144 60,146"/><path d="M60,20 C40,22 34,60 34,84 C34,110 40,144 60,146"/>
+            <path d="M60,20 C98,22 104,60 104,84 C104,112 96,144 60,146"/><path d="M60,20 C22,22 16,60 16,84 C16,112 24,144 60,146"/>
+          </g>
+          <text x="60" y="98" text-anchor="middle" font-size="34" fill="#F9E3B0" font-family="'Noto Serif SC','Songti SC',serif">囍</text>
+          <rect x="42" y="144" width="36" height="8" rx="2" fill="url(#yl-goldg)"/>
+          <path d="M60,152 L60,160" stroke="#C9A962" stroke-width="2"/>
+          <path d="M54,160 L66,160 L64,170 L56,170Z" fill="#C23A24"/>
+        </svg>
+      </button>
+      <p class="yl-hint" id="yl-hint">Tap the lantern to light it<br><span class="yl-zh">轻触点亮灯笼</span></p>
+    </div>
+  </section>
+
+  <!-- ============ 2. THE INVITATION ============ -->
+  <div class="yl-reveal" id="yl-reveal" hidden>
+
+    <section class="yl-card yl-intro">
+      <p class="yl-eyebrow">Together with their families</p>
+      <h1 class="yl-names" id="yl-names"></h1>
+      <p class="yl-names-zh" id="yl-names-zh"></p>
+      <p class="yl-lead"><em>joyfully invite you to celebrate their marriage over an evening of dinner, laughter and love</em></p>
+      <p class="yl-zh yl-lead-zh">诚挚邀请您出席我们的婚宴 · 百年好合</p>
+
+      <div class="yl-scratch-wrap">
+        <p class="yl-eyebrow">Scratch to reveal the date<br><span class="yl-zh" style="letter-spacing:.2em">刮开揭晓日期</span></p>
+        <div class="yl-scratch" id="yl-scratch">
+          <div class="yl-date">
+            <span class="yl-date-big">10 · 04 · 2027</span>
+            <span class="yl-date-sub">Saturday evening · 星期六晚上</span>
+          </div>
+          <canvas id="yl-foil" aria-hidden="true"></canvas>
+        </div>
+        <button class="yl-link" id="yl-reveal-date" type="button">Just show me the date</button>
+      </div>
+    </section>
+
+    <section class="yl-deck-wrap" aria-label="Our photos">
+      <div class="yl-deck" id="yl-deck" tabindex="0" role="button" aria-label="Photo deck. Tap or press Enter to see the next photo."></div>
+      <p class="yl-deck-hint">Flick or tap through<br><span class="yl-zh">轻滑翻看</span></p>
+    </section>
+
+    <section class="yl-card yl-details">
+      <div class="yl-detail">
+        <span class="yl-eyebrow">When · 时间</span>
+        <span class="yl-detail-main">Saturday, 10 April 2027</span>
+        <span id="yl-time"></span>
+      </div>
+      <div class="yl-rule" aria-hidden="true"></div>
+      <div class="yl-detail">
+        <span class="yl-eyebrow">Where · 地点</span>
+        <span class="yl-detail-main">HortPark · Multi-Purpose Hall</span>
+        <span>33 Hyderabad Road, Singapore 119578 · 园艺林</span>
+        <a class="yl-link" id="yl-map" target="_blank" rel="noopener">Open in Maps →</a>
+      </div>
+    </section>
+
+    <section class="yl-card yl-rsvp" id="yl-rsvp">
+      <form id="yl-form" novalidate>
+        <p class="yl-eyebrow">Kindly reply by <span id="yl-by"></span><br><span class="yl-zh" id="yl-by-zh" style="letter-spacing:.15em"></span></p>
+        <h2 class="yl-h2">Will you <em>celebrate with us?</em> <span class="yl-zh">敬请回复</span></h2>
+        <div class="yl-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
+
+        <label class="yl-field"><span class="yl-lbl">Your name · 姓名</span><input id="yl-name" name="name" autocomplete="name"></label>
+        <label class="yl-field"><span class="yl-lbl">Mobile number · 手机</span><input id="yl-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"></label>
+
+        <fieldset class="yl-fs">
+          <legend class="yl-lbl">Will you be joining us? · 是否出席</legend>
+          <div class="yl-choice">
+            <input type="radio" id="yl-yes" name="attending" value="Yes"><label for="yl-yes">Joyfully accepts<span class="yl-zh">欣然出席</span></label>
+            <input type="radio" id="yl-no" name="attending" value="No"><label for="yl-no">Regretfully declines<span class="yl-zh">未能出席</span></label>
+          </div>
+        </fieldset>
+
+        <div id="yl-yesf" hidden>
+          <fieldset class="yl-fs yl-inline">
+            <legend class="yl-lbl">Guests, including you · 出席人数</legend>
+            <div class="yl-stepper"><button type="button" data-step="-1" aria-label="Fewer guests">−</button><output id="yl-pax" aria-live="polite">1</output><button type="button" data-step="1" aria-label="More guests">+</button></div>
+          </fieldset>
+          <fieldset class="yl-fs">
+            <legend class="yl-lbl">Any dietary requirements? · 饮食需求 <span class="yl-opt">(optional)</span></legend>
+            <div class="yl-chips" id="yl-chips"></div>
+          </fieldset>
+        </div>
+
+        <label class="yl-field"><span class="yl-lbl">Write a wish on your lantern · 写下祝福 <span class="yl-opt">(optional)</span></span>
+          <input id="yl-wish" name="wish" maxlength="80" placeholder="e.g. 百年好合! Wishing you a lifetime of joy">
+        </label>
+
+        <p class="yl-error" id="yl-err" role="alert" hidden></p>
+        <button class="yl-btn" type="submit" id="yl-send">Release my lantern · 放飞天灯</button>
+      </form>
+
+      <div class="yl-thanks" id="yl-thanks" tabindex="-1" hidden>
+        <svg class="yl-mini" viewBox="0 0 60 84" aria-hidden="true"><use href="#yl-skylantern"/></svg>
+        <h2 class="yl-h2" id="yl-t-title"></h2>
+        <p id="yl-t-msg"></p>
+        <div class="yl-actions">
+          <button class="yl-btn" type="button" id="yl-cal">Add to calendar · 加入日历</button>
+          <button class="yl-btn yl-ghost" type="button" id="yl-edit">Update my reply · 修改</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="yl-foot"><span class="yl-zh">花开富贵 · 喜气盈门</span><span id="yl-contact"></span></p>
+  </div>
+
+  <div class="yl-flight" id="yl-flight" aria-hidden="true"></div>
+</div>
+
+<style>
+#yl-invite{--cream:#F8F2E8;--blush:#F2DCCF;--dusk:#E9C2AE;--ink:#2F2A25;--muted:#6E655B;--red:#C8442E;--gold:#A9884A;--goldf:#D7BE86;--sage:#6E8263;
+  position:relative;font-family:'Jost',system-ui,sans-serif;font-weight:300;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow:hidden;
+  background:linear-gradient(180deg,#F6E3D3 0%,var(--cream) 30%,var(--cream) 100%);text-align:center}
+#yl-invite *{box-sizing:border-box}
+#yl-invite p,#yl-invite h1,#yl-invite h2{margin:0;padding:0;letter-spacing:normal;text-transform:none}
+#yl-invite button,#yl-invite input{font:inherit;color:inherit}
+#yl-invite :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#yl-invite [hidden]{display:none!important}
+#yl-invite .yl-zh{font-family:'Noto Serif SC','Songti SC',serif;font-style:normal}
+#yl-invite .yl-eyebrow{display:block;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:400}
+
+/* sky */
+#yl-invite .yl-sky{position:relative;min-height:min(100svh,880px);display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(120% 70% at 50% 100%,#FBE9D3 0%,#F4D5C2 35%,#E4B7A4 70%,#C99A8E 100%);transition:min-height 1s ease}
+#yl-invite .yl-sky.yl-done{min-height:420px}
+#yl-invite .yl-floaters{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#yl-invite .yl-floater{position:absolute;bottom:-90px;width:var(--s);filter:drop-shadow(0 0 10px rgba(255,190,110,.7));animation:yl-rise var(--d) linear var(--delay) infinite;opacity:.9}
+#yl-invite .yl-floater svg{width:100%;height:auto;display:block;animation:yl-sway 3.5s ease-in-out infinite alternate}
+@keyframes yl-rise{from{transform:translateY(0)}to{transform:translateY(calc(-1 * min(100svh,880px) - 160px))}}
+@keyframes yl-sway{from{transform:translateX(-8px) rotate(-3deg)}to{transform:translateX(8px) rotate(3deg)}}
+#yl-invite .yl-sky-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:22px;padding:48px 20px}
+#yl-invite .yl-kicker{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:#5A3B30}
+#yl-invite .yl-hero-lantern{position:relative;width:min(46vw,200px);border:0;background:none;padding:0;cursor:pointer;animation:yl-bob 3s ease-in-out infinite;transition:transform .3s}
+#yl-invite .yl-hero-lantern svg{position:relative;width:100%;height:auto;display:block;z-index:1}
+#yl-invite .yl-hero-lantern:hover{transform:scale(1.04)}
+#yl-invite .yl-glow{position:absolute;left:50%;top:52%;width:260%;aspect-ratio:1;transform:translate(-50%,-50%) scale(.3);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,214,140,.9) 0%,rgba(255,170,90,.45) 30%,rgba(255,140,80,0) 65%);opacity:0;transition:opacity 1s,transform 1.2s;pointer-events:none}
+#yl-invite .yl-lit .yl-glow{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#yl-invite .yl-lit .yl-body{fill:url(#yl-lit)}
+#yl-invite .yl-hero-lantern.yl-up{animation:yl-fly 1.6s cubic-bezier(.5,0,.6,1) forwards}
+@keyframes yl-bob{50%{transform:translateY(-8px)}}
+@keyframes yl-fly{to{transform:translateY(-60vh) scale(.5);opacity:0}}
+#yl-invite .yl-hint{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#6B4637;animation:yl-pulse 2.4s ease-in-out infinite}
+#yl-invite .yl-hint .yl-zh{letter-spacing:.3em;font-size:.95rem;text-transform:none}
+@keyframes yl-pulse{50%{opacity:.5}}
+
+/* cards */
+#yl-invite .yl-reveal{padding:0 18px 60px;animation:yl-in 1s ease both}
+@keyframes yl-in{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+#yl-invite .yl-card{position:relative;max-width:560px;margin:0 auto;background:#FFFCF6;border:1px solid rgba(169,136,74,.45);padding:44px clamp(22px,6vw,44px);box-shadow:0 18px 40px rgba(90,60,40,.08)}
+#yl-invite .yl-card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(169,136,74,.25);pointer-events:none}
+#yl-invite .yl-intro{margin-top:-60px}
+#yl-invite .yl-names{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1.05;margin:.6rem 0 .3rem;color:var(--ink)}
+#yl-invite .yl-names em{font-style:italic;font-weight:400;color:var(--red)}
+#yl-invite .yl-names-zh{font-family:'Noto Serif SC',serif;font-weight:600;letter-spacing:.35em;font-size:1.3rem;color:var(--red)}
+#yl-invite .yl-lead{font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.6;max-width:360px;margin:18px auto 6px;text-wrap:balance}
+#yl-invite .yl-lead-zh{font-size:.95rem;letter-spacing:.15em;color:var(--muted)}
+
+/* scratch */
+#yl-invite .yl-scratch-wrap{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:12px}
+#yl-invite .yl-scratch{position:relative;width:min(100%,340px);height:120px;border-radius:4px;overflow:hidden;background:#FFF6E6;border:1px solid rgba(169,136,74,.5);touch-action:none}
+#yl-invite .yl-date{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+#yl-invite .yl-date-big{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:var(--red);letter-spacing:.06em}
+#yl-invite .yl-date-sub{font-size:.85rem;color:var(--muted)}
+#yl-invite #yl-foil{position:absolute;inset:0;width:100%;height:100%;cursor:grab;transition:opacity .8s}
+#yl-invite .yl-link{background:none;border:0;padding:6px;color:var(--gold);font-size:.82rem;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+
+/* deck */
+#yl-invite .yl-deck-wrap{padding:64px 0 40px}
+#yl-invite .yl-deck{position:relative;width:min(72vw,280px);aspect-ratio:3/4;margin:0 auto;cursor:pointer;outline-offset:16px}
+#yl-invite .yl-print{position:absolute;inset:0;background:#fff;padding:10px 10px 38px;box-shadow:0 10px 26px rgba(70,45,30,.18);transition:transform .45s cubic-bezier(.3,.7,.3,1),opacity .3s;user-select:none;-webkit-user-drag:none;touch-action:pan-y}
+#yl-invite .yl-print img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+#yl-invite .yl-print::after{content:"Y & L · 10.04.2027";position:absolute;left:0;right:0;bottom:9px;font-family:'Ma Shan Zheng','Cormorant Garamond',cursive;font-size:1rem;color:#7A6A5C}
+#yl-invite .yl-deck-hint{margin-top:22px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* details */
+#yl-invite .yl-details{display:flex;flex-direction:column;gap:20px}
+#yl-invite .yl-detail{display:flex;flex-direction:column;gap:2px;font-size:.98rem;color:var(--muted)}
+#yl-invite .yl-detail-main{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink);margin-top:4px}
+#yl-invite .yl-rule{width:60px;height:1px;background:var(--gold);margin:0 auto;opacity:.6}
+
+/* rsvp */
+#yl-invite .yl-rsvp{margin-top:28px;text-align:left}
+#yl-invite .yl-h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.1rem;line-height:1.15;margin:.5rem 0 1.4rem}
+#yl-invite .yl-h2 em{font-style:italic;color:var(--red)}
+#yl-invite .yl-h2 .yl-zh{display:block;font-size:1.2rem;letter-spacing:.25em;margin-top:6px;color:var(--muted)}
+#yl-invite .yl-field{display:flex;flex-direction:column;gap:4px;margin-bottom:18px}
+#yl-invite .yl-lbl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:400}
+#yl-invite .yl-opt{text-transform:none;letter-spacing:0}
+#yl-invite .yl-field input{border:0;border-bottom:1px solid rgba(110,101,91,.5);background:transparent;padding:10px 2px;font-size:1.05rem;font-weight:400;min-height:46px;border-radius:0;width:100%;color:var(--ink);box-shadow:none}
+#yl-invite .yl-field input:focus{outline:none;border-bottom-color:var(--red)}
+#yl-invite .yl-fs{border:0;padding:0;margin:0 0 20px;min-width:0}
+#yl-invite .yl-choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+#yl-invite .yl-choice input,#yl-invite .yl-chips input{position:absolute;opacity:0;pointer-events:none}
+#yl-invite .yl-choice label{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:62px;border:1px solid rgba(110,101,91,.45);cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.2;padding:8px;background:#fff}
+#yl-invite .yl-choice label .yl-zh{font-size:.88rem;color:var(--muted);margin-top:3px}
+#yl-invite .yl-choice input:checked+label{background:var(--red);border-color:var(--red);color:#fff}
+#yl-invite .yl-choice input:checked+label .yl-zh{color:#FBE3D6}
+#yl-invite .yl-choice input:focus-visible+label,#yl-invite .yl-chips input:focus-visible+label{outline:2px solid var(--gold);outline-offset:3px}
+#yl-invite .yl-inline{display:flex;align-items:center;justify-content:space-between;gap:14px}
+#yl-invite .yl-inline legend{float:left;max-width:60%}
+#yl-invite .yl-stepper{display:inline-flex;align-items:center;border:1px solid rgba(110,101,91,.45);background:#fff}
+#yl-invite .yl-stepper button{width:46px;height:46px;border:0;background:none;font-size:1.3rem;cursor:pointer;color:var(--red)}
+#yl-invite .yl-stepper output{min-width:42px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem}
+#yl-invite .yl-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+#yl-invite .yl-chips label{padding:9px 14px;border:1px solid rgba(110,101,91,.45);border-radius:999px;cursor:pointer;font-size:.9rem;min-height:44px;display:inline-flex;align-items:center;gap:6px;background:#fff}
+#yl-invite .yl-chips input:checked+label{background:#F7E2D6;border-color:var(--red)}
+#yl-invite .yl-hp{position:absolute;left:-9999px}
+#yl-invite .yl-error{color:#A3412F;font-size:.92rem;margin:0 0 12px}
+#yl-invite .yl-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:0 18px;border:1px solid var(--red);background:var(--red);color:#fff;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:filter .2s;white-space:nowrap}
+#yl-invite .yl-btn:hover{filter:brightness(1.07)}
+#yl-invite .yl-btn.yl-ghost{background:transparent;color:var(--red)}
+#yl-invite .yl-btn[disabled]{opacity:.6;cursor:wait}
+#yl-invite .yl-thanks{text-align:center}
+#yl-invite .yl-thanks p{margin:0 0 22px;color:var(--muted)}
+#yl-invite .yl-mini{width:46px;height:auto;filter:drop-shadow(0 0 10px rgba(255,180,90,.8));animation:yl-bob 3s ease-in-out infinite}
+#yl-invite .yl-actions{display:flex;flex-direction:column;gap:10px}
+#yl-invite .yl-foot{max-width:560px;margin:36px auto 0;font-size:.9rem;color:var(--muted)}
+#yl-invite .yl-foot .yl-zh{display:block;letter-spacing:.4em;color:var(--red);margin-bottom:6px;font-size:1.05rem}
+
+/* wish lantern flight */
+#yl-invite .yl-flight{position:fixed;inset:0;pointer-events:none;z-index:9999}
+#yl-invite .yl-wish{position:absolute;left:50%;bottom:-160px;width:120px;transform:translateX(-50%);animation:yl-wishup 6s cubic-bezier(.35,.1,.4,1) forwards}
+#yl-invite .yl-wish svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 18px rgba(255,180,90,.9))}
+#yl-invite .yl-wish span{position:absolute;left:12%;right:12%;top:20%;font-family:'Ma Shan Zheng','Noto Serif SC',serif;color:#FFF0CF;font-size:.8rem;line-height:1.25;text-align:center;word-break:break-word;max-height:50%;overflow:hidden}
+@keyframes yl-wishup{0%{transform:translate(-50%,0) rotate(-2deg)}50%{transform:translate(-30%,-60vh) rotate(3deg)}100%{transform:translate(-55%,-125vh) rotate(-2deg) scale(.6);opacity:.2}}
+
+@media (min-width:900px){
+  #yl-invite .yl-reveal{display:grid;grid-template-columns:minmax(0,560px) minmax(0,420px);justify-content:center;column-gap:56px;align-items:start}
+  #yl-invite .yl-intro{grid-column:1;grid-row:1}
+  #yl-invite .yl-deck-wrap{grid-column:2;grid-row:1 / span 2;padding-top:40px;position:sticky;top:40px}
+  #yl-invite .yl-details{grid-column:1;margin-top:28px}
+  #yl-invite .yl-rsvp{grid-column:1}
+  #yl-invite .yl-foot{grid-column:1 / -1}
+  #yl-invite .yl-deck{width:320px}
+}
+@media (prefers-reduced-motion:reduce){#yl-invite *{animation:none!important;transition:none!important}}
+</style>
+
+<script>
+(function () {
+/* ======================= EDIT THESE ======================= */
+var CONFIG = {
+  bride: 'Yong Yu', groom: 'Lawrence',
+  brideZh: '詠渝', groomZh: '幸财',
+  SCRIPT_URL: '',                       // Apps Script Web App URL (ends in /exec)
+  time: 'Dinner reception at 6:30 PM · 晚上6点30分',
+  start: '2027-04-10T18:30:00+08:00',
+  end:   '2027-04-10T22:30:00+08:00',
+  rsvpBy: '28 February 2027', rsvpByZh: '请于2月28日前回复',
+  maxPax: 4,
+  diet: [['Vegetarian','素食'],['No beef','不吃牛肉'],['No pork','不吃猪肉'],['No seafood','不吃海鲜']],
+  contact: 'With love and gratitude. For any questions, simply WhatsApp us at',
+  whatsapp: '6590464045', whatsappShow: '9046 4045',
+  // Photos live in the "photos" folder next to this file:
+  photos: ['photos/01.jpg','photos/02.jpg','photos/03.jpg','photos/04.jpg','photos/05.jpg','photos/06.jpg']
+};
+/* ========================================================== */
+
+var root = document.getElementById('yl-invite');
+var $ = function (s) { return root.querySelector(s); };
+var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+$('#yl-names').innerHTML = esc(CONFIG.bride) + ' <em>&amp;</em> ' + esc(CONFIG.groom);
+$('#yl-names-zh').textContent = CONFIG.brideZh + ' · ' + CONFIG.groomZh;
+$('#yl-time').textContent = CONFIG.time;
+$('#yl-by').textContent = CONFIG.rsvpBy; $('#yl-by-zh').textContent = CONFIG.rsvpByZh;
+$('#yl-contact').innerHTML = esc(CONFIG.contact) + ' <a href="https://wa.me/' + esc(CONFIG.whatsapp) + '" target="_blank" rel="noopener" style="color:inherit">' + esc(CONFIG.whatsappShow) + '</a>.<br><span class="yl-zh">如有疑问，欢迎联系我们</span>';
+$('#yl-map').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('HortPark Multi-Purpose Hall, 33 Hyderabad Road, Singapore 119578');
+
+// Personal link: ?to=Auntie%20Mei&pax=2
+var q = new URLSearchParams(location.search);
+if (q.get('to')) { $('.yl-kicker').textContent = 'Dear ' + q.get('to') + ','; $('#yl-name').value = q.get('to'); }
+if (parseInt(q.get('pax'), 10) > 0) CONFIG.maxPax = Math.min(parseInt(q.get('pax'), 10), 10);
+
+/* ---- floating sky lanterns ---- */
+var fl = $('#yl-floaters');
+for (var i = 0; i < 11; i++) {
+  var d = document.createElement('div');
+  d.className = 'yl-floater';
+  d.style.left = (4 + Math.random() * 90) + '%';
+  d.style.setProperty('--s', (18 + Math.random() * 26) + 'px');
+  d.style.setProperty('--d', (14 + Math.random() * 12) + 's');
+  d.style.setProperty('--delay', (-Math.random() * 20) + 's');
+  d.innerHTML = '<svg viewBox="0 0 60 84"><use href="#yl-skylantern"/></svg>';
+  fl.appendChild(d);
+}
+
+/* ---- 1. light the lantern ---- */
+var opened = false;
+$('#yl-light').addEventListener('click', function () {
+  if (opened) return; opened = true;
+  var b = this; b.classList.add('yl-lit');
+  $('#yl-hint').innerHTML = 'May our joy light your way<br><span class="yl-zh">喜气洋洋</span>';
+  setTimeout(function () {
+    b.classList.add('yl-up');
+    $('#yl-reveal').hidden = false;
+    setupFoil(); setupDeck();
+    setTimeout(function () { $('#yl-sky').classList.add('yl-done'); $('#yl-hint').hidden = true; }, reduce ? 0 : 900);
+  }, reduce ? 0 : 900);
+});
+
+/* ---- 2. scratch-off date ---- */
+var foilReady = false;
+function setupFoil() {
+  if (foilReady) return; foilReady = true;
+  var cv = $('#yl-foil'), box = $('#yl-scratch'), ctx = cv.getContext('2d');
+  var dpr = window.devicePixelRatio || 1, w = box.clientWidth, h = box.clientHeight;
+  cv.width = w * dpr; cv.height = h * dpr; ctx.scale(dpr, dpr);
+  var g = ctx.createLinearGradient(0, 0, w, h);
+  g.addColorStop(0, '#E7D29C'); g.addColorStop(.45, '#C9A962'); g.addColorStop(.55, '#F1E1B4'); g.addColorStop(1, '#A9884A');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = 'rgba(255,255,255,.18)';
+  for (var x = -h; x < w; x += 14) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x + h, h); ctx.lineTo(x + h + 5, h); ctx.lineTo(x + 5, 0); ctx.fill(); }
+  ctx.fillStyle = '#6B5328'; ctx.font = '500 13px Jost, sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText('✦  SCRATCH HERE  ·  刮一刮  ✦', w / 2, h / 2 + 5);
+  ctx.globalCompositeOperation = 'destination-out';
+  var down = false, moves = 0, done = false;
+  function pos(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+  function scratch(e) {
+    if (!down || done) return; var p = pos(e);
+    ctx.beginPath(); ctx.arc(p[0], p[1], 22, 0, Math.PI * 2); ctx.fill();
+    if (++moves % 8 === 0) check();
+  }
+  function check() {
+    var data = ctx.getImageData(0, 0, cv.width, cv.height).data, clear = 0, n = 0;
+    for (var k = 3; k < data.length; k += 4 * 40) { n++; if (data[k] < 40) clear++; }
+    if (clear / n > .42) reveal();
+  }
+  function reveal() { if (done) return; done = true; cv.style.opacity = 0; setTimeout(function () { cv.remove(); }, 800); $('#yl-reveal-date').hidden = true; sparkle(box); }
+  cv.addEventListener('pointerdown', function (e) { down = true; cv.setPointerCapture(e.pointerId); scratch(e); });
+  cv.addEventListener('pointermove', scratch);
+  cv.addEventListener('pointerup', function () { down = false; check(); });
+  $('#yl-reveal-date').addEventListener('click', reveal);
+}
+function sparkle(el) {
+  if (reduce) return;
+  for (var i = 0; i < 16; i++) {
+    var s = document.createElement('span');
+    s.textContent = i % 3 ? '✦' : '❀';
+    s.style.cssText = 'position:absolute;left:50%;top:50%;color:' + (i % 2 ? '#C9A962' : '#C8442E') + ';font-size:' + (10 + Math.random() * 10) + 'px;pointer-events:none;transition:transform 1s ease-out,opacity 1s;';
+    el.appendChild(s);
+    (function (s) { requestAnimationFrame(function () {
+      s.style.transform = 'translate(' + (Math.random() * 300 - 150) + 'px,' + (Math.random() * 140 - 70) + 'px) rotate(' + (Math.random() * 360) + 'deg)';
+      s.style.opacity = 0; }); setTimeout(function () { s.remove(); }, 1100); })(s);
+  }
+}
+
+/* ---- 3. photo deck ---- */
+var deckReady = false;
+function setupDeck() {
+  if (deckReady) return; deckReady = true;
+  var deck = $('#yl-deck'), cards = [];
+  CONFIG.photos.forEach(function (src, i) {
+    var c = document.createElement('div'); c.className = 'yl-print';
+    c.innerHTML = '<img alt="" draggable="false" src="' + esc(src) + '">';
+    deck.appendChild(c); cards.push(c);
+  });
+  var tilts = [-4, 3, -2, 5, -6, 2];
+  function layout() {
+    cards.forEach(function (c, i) {
+      c.style.zIndex = cards.length - i;
+      c.style.transform = 'translate(' + (i * 3) + 'px,' + (i * 4) + 'px) rotate(' + tilts[i % tilts.length] + 'deg)';
+      c.style.opacity = i > 3 ? 0 : 1;
+    });
+  }
+  layout();
+  function next(dir) {
+    var top = cards[0];
+    top.style.transform = 'translate(' + (dir * 140) + '%, -10%) rotate(' + (dir * 22) + 'deg)';
+    top.style.opacity = 0;
+    setTimeout(function () { cards.push(cards.shift()); top.style.transition = 'none'; layout(); top.offsetHeight; top.style.transition = ''; }, 380);
+  }
+  var sx = null, moved = 0;
+  deck.addEventListener('pointerdown', function (e) { sx = e.clientX; moved = 0; });
+  deck.addEventListener('pointermove', function (e) {
+    if (sx === null) return; moved = e.clientX - sx;
+    cards[0].style.transition = 'none';
+    cards[0].style.transform = 'translate(' + moved + 'px,0) rotate(' + (moved / 12) + 'deg)';
+  });
+  function end() {
+    if (sx === null) return; cards[0].style.transition = '';
+    if (Math.abs(moved) > 60) next(moved > 0 ? 1 : -1);
+    else if (Math.abs(moved) < 6) next(1);
+    else layout();
+    sx = null;
+  }
+  deck.addEventListener('pointerup', end); deck.addEventListener('pointerleave', end); deck.addEventListener('pointercancel', end);
+  deck.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') { e.preventDefault(); next(1); } });
+}
+
+/* ---- 4. RSVP ---- */
+var pax = 1;
+function setPax(n) { pax = Math.min(CONFIG.maxPax, Math.max(1, n)); $('#yl-pax').textContent = pax; }
+root.querySelectorAll('[data-step]').forEach(function (b) { b.addEventListener('click', function () { setPax(pax + +b.dataset.step); }); });
+$('#yl-chips').innerHTML = CONFIG.diet.map(function (d, i) {
+  return '<input type="checkbox" id="yl-d' + i + '" name="diet" value="' + esc(d[0]) + '"><label for="yl-d' + i + '">' + esc(d[0]) + ' <span class="yl-zh">' + esc(d[1]) + '</span></label>';
+}).join('');
+root.querySelectorAll('[name=attending]').forEach(function (r) { r.addEventListener('change', function () { $('#yl-yesf').hidden = r.value !== 'Yes'; }); });
+
+var form = $('#yl-form');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var fd = new FormData(form), err = $('#yl-err');
+  function fail(m, el) { err.textContent = m; err.hidden = false; if (el) el.focus(); }
+  err.hidden = true;
+  var name = (fd.get('name') || '').trim(), phone = (fd.get('phone') || '').trim(), att = fd.get('attending'), wish = (fd.get('wish') || '').trim();
+  if (!name) return fail('May we have your name, please?', $('#yl-name'));
+  if (!phone) return fail('May we have your mobile number, please?', $('#yl-phone'));
+  if (!att) return fail('Do let us know if you will be joining us.');
+  var data = new URLSearchParams({
+    website: fd.get('website') || '', name: name, phone: phone, attending: att,
+    pax: att === 'Yes' ? pax : 0, dietary: att === 'Yes' ? fd.getAll('diet').join(', ') : '', message: wish
+  });
+  var btn = $('#yl-send'); btn.disabled = true; btn.textContent = 'Lighting your lantern…';
+  var send = CONFIG.SCRIPT_URL ? fetch(CONFIG.SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data }) : Promise.resolve();
+  send.then(function () {
+    releaseLantern(wish || (att === 'Yes' ? 'See you there! 喜' : '祝福 · Love'));
+    var first = name.split(' ')[0], yes = att === 'Yes';
+    $('#yl-t-title').textContent = yes ? "We can't wait to celebrate with you, " + first + '!' : "You'll be dearly missed, " + first;
+    $('#yl-t-msg').innerHTML = (yes
+      ? (pax > 1 ? pax + ' seats are' : 'Your seat is') + ' lovingly reserved for Saturday, 10 April.<br><span class="yl-zh">已为您预留' + pax + '个座位，期待与您共沾喜气！</span>'
+      : 'Thank you so much for letting us know. You’ll be in our hearts on the day.<br><span class="yl-zh">感谢告知，祝您福寿安康、万事如意。</span>')
+      + (wish ? '<br><br>Your wish is floating our way on a lantern.' : '');
+    $('#yl-cal').hidden = !yes;
+    form.hidden = true; $('#yl-thanks').hidden = false; $('#yl-thanks').focus({ preventScroll: true });
+  }).catch(function () {
+    fail('So sorry, your reply didn’t go through. Please try once more.');
+  }).then(function () { btn.disabled = false; btn.textContent = 'Release my lantern · 放飞天灯'; });
+});
+$('#yl-edit').addEventListener('click', function () { $('#yl-thanks').hidden = true; form.hidden = false; });
+
+function releaseLantern(text) {
+  if (reduce) return;
+  var w = document.createElement('div'); w.className = 'yl-wish';
+  w.innerHTML = '<svg viewBox="0 0 60 84"><use href="#yl-skylantern"/></svg><span></span>';
+  w.querySelector('span').textContent = text;
+  $('#yl-flight').appendChild(w);
+  setTimeout(function () { w.remove(); }, 6200);
+}
+
+/* calendar */
+function icsDate(iso) { return new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+$('#yl-cal').addEventListener('click', function () {
+  var ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding//RSVP//EN','BEGIN:VEVENT','UID:wedding-20270410@invite',
+    'DTSTAMP:' + icsDate(new Date().toISOString()),'DTSTART:' + icsDate(CONFIG.start),'DTEND:' + icsDate(CONFIG.end),
+    'SUMMARY:' + CONFIG.bride + ' & ' + CONFIG.groom + "'s Wedding Dinner 婚宴",
+    'LOCATION:HortPark Multi-Purpose Hall\\, 33 Hyderabad Road\\, Singapore 119578','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+  a.download = 'wedding-10-april-2027.ics'; document.body.appendChild(a); a.click(); a.remove();
+});
+})();
+</script>
+
+</body>
+</html>
