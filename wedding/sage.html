@@ -646,9 +646,8 @@ document.querySelector('.env-wrap').addEventListener('click', function (e) {
     document.body.appendChild(m);
     setTimeout(function () { m.classList.add('in'); }, 250);
     setTimeout(function () { m.style.opacity = 1; m.style.animation = 'none'; m.querySelectorAll('.ink').forEach(function (i) { i.style.webkitMaskPosition = i.style.maskPosition = '0 0'; i.style.animation = 'none'; }); m.classList.remove('in'); m.offsetWidth; m.style.animation = ''; m.classList.add('out'); }, 3700);
-    setTimeout(function () { document.body.classList.add('show-photo'); }, 3500);
-    setTimeout(function () { document.body.classList.add('show-title'); }, 4800);
-    setTimeout(function () { document.body.classList.add('show-panel'); }, 8100);
+    setTimeout(function () { document.body.classList.add('show-photo', 'show-title'); }, 3400);
+    setTimeout(function () { document.body.classList.add('show-panel'); }, 6800);
     setTimeout(function () { m.remove(); }, 5400);
   });
 })();
