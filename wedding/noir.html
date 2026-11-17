@@ -40,6 +40,23 @@ button,input{font:inherit;color:inherit}
 .env-seal:hover{transform:translate(-50%,-50%) scale(1.06)}
 .env-hint{color:var(--muted);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.45}}
+
+/* magpies 喜鹊 flying out */
+.birds{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.bird{position:absolute;left:var(--x0);top:var(--y0);width:var(--w);margin-left:calc(var(--w) / -2);opacity:0;animation:fly var(--dur) cubic-bezier(.25,.6,.35,1) var(--delay) forwards}
+.bird .dir{display:block;transform:scaleX(var(--face))}
+.bird svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 2px 3px rgba(60,45,20,.35))}
+.bird .wing{transform-box:fill-box;transform-origin:30% 100%;animation:flap .32s ease-in-out infinite alternate}
+.bird .wing.back{animation-delay:-.08s}
+@keyframes flap{from{transform:rotate(-6deg) scaleY(1)}to{transform:rotate(10deg) scaleY(-.45)}}
+@keyframes fly{
+  0%{opacity:0;transform:translate(0,0) scale(.25)}
+  12%{opacity:1}
+  45%{transform:translate(calc(var(--tx) * .45),calc(var(--ty) * .35 - 40px)) scale(.85)}
+  85%{opacity:1}
+  100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1)}}
+@media (prefers-reduced-motion:reduce){.birds{display:none}}
+
 /* tap prompt */
 .env-wrap{cursor:pointer}
 .env-seal::before,.env-seal::after{content:"";position:absolute;inset:4px;border-radius:50%;border:2px solid rgba(201,178,124,.95);animation:ring 2s ease-out infinite;pointer-events:none}
@@ -399,7 +416,7 @@ if (parseInt(q.get('pax'), 10) > 0) CONFIG.maxPax = Math.min(parseInt(q.get('pax
 
 $('#openBtn').addEventListener('click', () => {
   $('#envelope').classList.add('opening');
-  setTimeout(() => $('#envelope').classList.add('opened'), 550);
+  setTimeout(() => $('#envelope').classList.add('opened'), 1000);
 });
 
 // Form
@@ -461,6 +478,29 @@ $('#calBtn').onclick = () => {
 document.querySelector('.env-wrap').addEventListener('click', function (e) {
   if (!e.target.closest('#openBtn')) document.getElementById('openBtn').click();
 });
+
+// 喜鹊报喜: magpies fly out of the envelope when it opens
+(function () {
+  var done = false, BIRD = "<svg viewBox=\"0 0 100 62\" aria-hidden=\"true\"><defs><linearGradient id=\"bg-gold\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#F3E3B3\"/><stop offset=\".55\" stop-color=\"#CDAE68\"/><stop offset=\"1\" stop-color=\"#9E7F41\"/></linearGradient></defs>\n<path class=\"wing back\" d=\"M54,31 C52,16 60,5 76,2 C71,11 67,21 61,31Z\" fill=\"#B8975A\" opacity=\".85\"/>\n<path d=\"M37,37 C25,41 13,46 0,55 C11,48 22,44 35,40Z\" fill=\"url(#bg-gold)\" stroke=\"#8C6E35\" stroke-width=\".6\"/>\n<path d=\"M37,38 C27,46 17,52 7,61 C17,53 26,47 36,41Z\" fill=\"url(#bg-gold)\" stroke=\"#8C6E35\" stroke-width=\".6\"/>\n<path d=\"M31,37 C39,29 55,27 67,29 C73,30 77,28 81,25 C81,31 76,36 69,38 C57,42 41,42 31,37Z\" fill=\"url(#bg-gold)\" stroke=\"#8C6E35\" stroke-width=\".7\"/>\n<path d=\"M44,36 C52,38 60,38 68,35\" fill=\"none\" stroke=\"#FFF6DA\" stroke-width=\"1\" opacity=\".75\"/>\n<circle cx=\"81\" cy=\"24\" r=\"6\" fill=\"url(#bg-gold)\" stroke=\"#8C6E35\" stroke-width=\".7\"/>\n<path d=\"M86.5,22.6 L95,24.4 L86.5,26.4Z\" fill=\"#8C6E35\"/>\n<circle cx=\"82.6\" cy=\"22.8\" r=\"1.05\" fill=\"#3B2E18\"/>\n<g class=\"wing\">\n<path d=\"M47,31 C38,14 47,-3 66,-6 C61,3 59,11 61,17 C57,22 54,27 53,31Z\" fill=\"url(#bg-gold)\" stroke=\"#8C6E35\" stroke-width=\".7\"/>\n<path d=\"M50,28 C46,18 49,8 58,1 M54,28 C52,20 54,12 60,6 M57,29 C57,23 58,17 61,13\" fill=\"none\" stroke=\"#FFF6DA\" stroke-width=\".8\" opacity=\".75\"/>\n</g>\n</svg>";
+  document.getElementById('openBtn').addEventListener('click', function () {
+    if (done) return; done = true;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var layer = document.createElement('div'); layer.className = 'birds'; document.body.appendChild(layer);
+    var r = document.querySelector('.env-wrap').getBoundingClientRect();
+    var cx = r.left + r.width / 2, cy = r.top + r.height * .55, W = innerWidth, H = innerHeight;
+    var n = 7;
+    for (var i = 0; i < n; i++) {
+      var side = i % 2 ? 1 : -1, b = document.createElement('div'); b.className = 'bird';
+      var tx = side * (W * (.35 + Math.random() * .45)), ty = -(H * (.45 + Math.random() * .5)) - cy * .2;
+      b.style.cssText = '--x0:' + (cx + (Math.random() * 60 - 30)) + 'px;--y0:' + (cy + (Math.random() * 30 - 15)) + 'px;' +
+        '--w:' + Math.round(96 + Math.random() * 50) + 'px;--tx:' + tx + 'px;--ty:' + ty + 'px;' +
+        '--face:' + side + ';--dur:' + (3.2 + Math.random() * 1.2).toFixed(2) + 's;--delay:' + (.2 + i * .13).toFixed(2) + 's';
+      b.innerHTML = '<span class="dir">' + BIRD + '</span>';
+      layer.appendChild(b);
+    }
+    setTimeout(function () { layer.remove(); }, 5200);
+  });
+})();
 </script>
 </body>
 </html>
