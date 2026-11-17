@@ -46,17 +46,16 @@ body.show-photo .hero picture,body.show-photo .hero::before{opacity:1;transform:
 body:not(.show-photo) .hero{background-color:#F4F0E8}
 @media (prefers-reduced-motion:reduce){.hero picture,.hero::before{opacity:1;transform:none}}
 /* cursive title over the photo */
-.photo-title{position:absolute;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 28px);top:clamp(44px,17vw,110px);z-index:3;margin:0;padding:16px 30px 18px;text-align:center;pointer-events:none;color:#3F4A36;isolation:isolate;
+.photo-title{position:absolute;left:0;right:0;top:clamp(56px,21vw,120px);z-index:3;margin:0;padding:10px 12px 18px;text-align:center;pointer-events:none;color:#FFFDF8;
+  text-shadow:0 1px 3px rgba(0,0,0,.45),0 4px 26px rgba(0,0,0,.5),0 0 60px rgba(0,0,0,.25);
   display:flex;flex-direction:column;align-items:center;
 }
-.photo-title .pt-a{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.15rem,5vw,1.7rem);letter-spacing:.06em;line-height:1;position:relative;z-index:1;color:#5E6B55}
-.photo-title .pt-love{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery','Segoe Script',cursive;font-weight:400;font-size:clamp(4.6rem,23vw,8.5rem);line-height:.82;margin:-.02em 0 -.08em;letter-spacing:-.01em}
+.photo-title .pt-a{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.15rem,5vw,1.7rem);letter-spacing:.06em;line-height:1;position:relative;z-index:1}
+.photo-title .pt-love{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery','Segoe Script',cursive;font-weight:400;font-size:clamp(5.2rem,27vw,9.5rem);line-height:.82;margin:-.02em 0 -.08em;letter-spacing:-.01em}
 .photo-title .pt-c{display:flex;align-items:center;gap:.35em;line-height:1}
-.photo-title .pt-amp{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive;font-size:clamp(2.6rem,12vw,4.4rem);color:#A88F55;line-height:.8}
+.photo-title .pt-amp{font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive;font-size:clamp(2.6rem,12vw,4.4rem);color:#F4E6BC;line-height:.8}
 .photo-title .pt-cel{font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:clamp(.8rem,3.5vw,1.15rem);letter-spacing:.42em;text-transform:uppercase;padding-left:.42em}
-.photo-title .pt-paper{position:absolute;inset:-14px -16px;z-index:-1;opacity:0;transition:opacity 1.2s ease;filter:drop-shadow(0 6px 14px rgba(25,22,15,.28))}
-.photo-title .pt-paper svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-body.show-title .photo-title .pt-paper{opacity:.84}
+
 .photo-title>span{display:block;padding:0 .18em;-webkit-mask-image:linear-gradient(90deg,#000 0 45%,transparent 55% 100%);mask-image:linear-gradient(90deg,#000 0 45%,transparent 55% 100%);
   -webkit-mask-size:230% 100%;mask-size:230% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .photo-title>.pt-c{display:flex}
@@ -71,7 +70,7 @@ body.show-panel .glass>*:nth-child(2){transition-delay:.15s}body.show-panel .gla
 body.show-panel .glass>*:nth-child(4){transition-delay:.45s}body.show-panel .glass>*:nth-child(5){transition-delay:.6s}
 @media (prefers-reduced-motion:reduce){.photo-title>span{-webkit-mask-image:none;mask-image:none}.glass,.glass>*{opacity:1;transform:none}}
 @media (min-aspect-ratio:1/1) and (min-width:900px){
-  .photo-title{left:68%;top:2vh}
+  .photo-title{left:36%;right:0;top:1.5vh}
   .photo-title .pt-love{font-size:clamp(4.4rem,6.8vw,7.6rem)}
   .photo-title .pt-amp{font-size:clamp(2.4rem,3.4vw,3.8rem)}
 }
@@ -423,7 +422,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 24px 48px}
     <source media="(min-aspect-ratio: 1/1)" id="heroWide">
     <img id="heroImg" alt="The couple">
   </picture>
-  <p class="photo-title" aria-label="An evening of love and celebration"><i class="pt-paper" aria-hidden="true"><svg viewBox="0 0 400 240" preserveAspectRatio="none"><defs><filter id="tatter" x="-6%" y="-8%" width="112%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".045 .06" numOctaves="4" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/></filter><filter id="tatter2" x="-6%" y="-8%" width="112%" height="116%"><feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="3" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G"/></filter><radialGradient id="aged" cx="50%" cy="48%" r="65%"><stop offset="0" stop-color="#FBF7EC"/><stop offset=".6" stop-color="#F3EAD6"/><stop offset=".9" stop-color="#DECBA4"/><stop offset="1" stop-color="#C9B183"/></radialGradient></defs><rect x="10" y="12" width="380" height="216" fill="#B79C6A" opacity=".55" filter="url(#tatter2)"/><g filter="url(#tatter)"><rect x="14" y="16" width="372" height="208" fill="url(#aged)"/><rect x="14" y="16" width="372" height="208" filter="url(#paperFibre)"/><rect x="14" y="16" width="372" height="208" filter="url(#paperGrain)"/><circle cx="330" cy="190" r="26" fill="#C9AE7E" opacity=".12"/><circle cx="60" cy="50" r="18" fill="#C9AE7E" opacity=".1"/></g></svg></i><span class="pt-a">an evening of</span><span class="pt-love">Love</span><span class="pt-c"><span class="pt-amp">&amp;</span><span class="pt-cel">Celebration</span></span></p>
+  <p class="photo-title" aria-label="An evening of love and celebration"><span class="pt-a">an evening of</span><span class="pt-love">Love</span><span class="pt-c"><span class="pt-amp">&amp;</span><span class="pt-cel">Celebration</span></span></p>
   <div class="hero-inner"><div class="glass">
     <h1 class="names" id="names"></h1>
     <p class="names-zh" id="namesZh"></p>
